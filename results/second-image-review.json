@@ -1,0 +1,5 @@
+{
+  "image": "results/clean/repaired_hq.png",
+  "accepted": false,
+  "reason": "50 steps did not remove pervasive painterly texture; retry with int8 transformer and larger output"
+}

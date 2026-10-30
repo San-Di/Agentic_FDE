@@ -1,0 +1,105 @@
+{
+  "business": "Rental excavators and trucks. From one sample photo, build a labeled set for return inspection: some machines with a flat tire and the rest intact, some with shattered cab glass, some with a body dent, in different scenes, plus undamaged views.",
+  "reference_photo": "inputs/reference.jpg",
+  "dataset": "/Users/sandihtun.soe/Documents/workspace/lifestylechallenge/cdf-excavator-route1/dataset_ft",
+  "recipe": "/Users/sandihtun.soe/Documents/workspace/lifestylechallenge/cdf-excavator-route1/configs/train_rental_equipment_damage.json",
+  "generate_jsonl": "/Users/sandihtun.soe/Documents/workspace/lifestylechallenge/cdf-excavator-route1/results/rental_equipment_damage/target-masks/testcase.jsonl",
+  "training_examples": [
+    {
+      "id": "deflated_van_tire",
+      "class": "WheeledExcavator+flat_tire",
+      "source": "https://commons.wikimedia.org/wiki/File:Deflated_car_tire.jpg",
+      "note": "Van tire collapsed at the contact patch. The mask covers the deformed rubber, not the hub.",
+      "pixels": [
+        1268,
+        1280
+      ]
+    },
+    {
+      "id": "flat_bus_tire",
+      "class": "WheeledExcavator+flat_tire",
+      "source": "https://commons.wikimedia.org/wiki/File:KSRTC_Flat_tire.jpg",
+      "note": "Bus tire deflated along the ground contact. Used as a truck-class exemplar because the supplied excavator has tracks.",
+      "pixels": [
+        1280,
+        960
+      ]
+    },
+    {
+      "id": "customer_glass",
+      "class": "TrackedExcavator+shattered_glass",
+      "source": "inputs/reference.jpg",
+      "note": "Shattered cab glass cropped from the supplied excavator photo.",
+      "pixels": [
+        205,
+        346
+      ]
+    },
+    {
+      "id": "shattered_windshield",
+      "class": "TrackedExcavator+shattered_glass",
+      "source": "https://commons.wikimedia.org/wiki/File:Windschutzscheibe,_gesplittert_(1).jpg",
+      "note": "Spiderweb fracture across a laminated windshield. Mask stays on the glass and off the mirror and dashboard.",
+      "pixels": [
+        960,
+        720
+      ]
+    },
+    {
+      "id": "tempered_glass_cracks",
+      "class": "TrackedExcavator+shattered_glass",
+      "source": "https://commons.wikimedia.org/wiki/File:Vidrio_roto.jpg",
+      "note": "Close-up of tempered-glass fracture. A thin border stays unmasked so the mask is not solid white.",
+      "pixels": [
+        960,
+        718
+      ]
+    },
+    {
+      "id": "customer_dent",
+      "class": "TrackedExcavator+dent",
+      "source": "inputs/reference.jpg",
+      "note": "Crushed body panel cropped from the supplied excavator photo.",
+      "pixels": [
+        356,
+        132
+      ]
+    }
+  ],
+  "generation_scenes": [
+    "tire_yard",
+    "tire_road",
+    "glass_site",
+    "glass_farm",
+    "dent_depot",
+    "dent_quarry"
+  ],
+  "unmet_equipment": [
+    "Truck"
+  ],
+  "unmet_reason": "No undamaged photo was supplied for this equipment, so the pipeline does not invent one. Related real defect photos are still used to teach a damage class that will be painted onto the equipment that does have a clean photo.",
+  "held_out_references": [
+    {
+      "file": "references/candidates/Flat_tire_on_a_Fiat_Panda.jpg",
+      "reason": "The deflated contact patch is only a few pixels tall, so a mask either covers the wheel or the gravel."
+    },
+    {
+      "file": "references/candidates/Tire_hernia.jpg",
+      "reason": "Excavator sidewall bubble, which is a different tire failure from a deflated tire."
+    },
+    {
+      "file": "references/candidates/thumb_Grad_wybita_tylna_szyba_samochodu.jpg",
+      "reason": "Shows loose glass on a parcel shelf rather than a fractured pane."
+    },
+    {
+      "file": "references/candidates/thumb_Damaged_car_from_hail_in_Missouri__April_2001.jpg",
+      "reason": "News still of a missing rear window, too coarse to teach a dent or a crack."
+    },
+    {
+      "file": "references/candidates/thumb_Perth_hailstorm_2010_damaged_car.jpg",
+      "reason": "Leaves and a collapsed rear window, not a readable dent or crack region."
+    }
+  ],
+  "training_budget": 4000,
+  "generator": "CDF AnomalyGen texture fine-tune. Defect pixels come from the reference photos, not from an image-edit model."
+}

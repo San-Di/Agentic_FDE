@@ -1,0 +1,44 @@
+{
+  "prompt": "Keep this exact photograph, viewpoint, equipment and background. Deflate ONLY the nearest visible rubber tire. Its lower sidewall must visibly collapse and bulge flat against the ground, with the rim lowered. Keep the rim undamaged. All other tires remain fully inflated; glass and metal panels remain undamaged. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+  "selections": {},
+  "caption_path": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.txt",
+  "output_media_path": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.png",
+  "input_media_path": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_yard.png",
+  "control_media": {},
+  "captioning": {
+    "strategy": "text",
+    "template": "Keep this exact photograph, viewpoint, equipment and background. Deflate ONLY the nearest visible rubber tire. Its lower sidewall must visibly collapse and bulge flat against the ground, with the rim lowered. Keep the rim undamaged. All other tires remain fully inflated; glass and metal panels remain undamaged. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels."
+  },
+  "endpoints": [
+    {
+      "stage": "generation",
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1/images/edits",
+      "adapter": "openai.images.edits",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "timeout": 1200.0,
+      "requests": [
+        {
+          "image": [
+            "image.png",
+            {
+              "__elided__": "bytes",
+              "bytes": 1225429,
+              "sha256": "b3261223a8b80019bacdde218460efa6db27d0e6c48e271e621f3afd8f7a98f7"
+            },
+            "image/png"
+          ],
+          "prompt": "Keep this exact photograph, viewpoint, equipment and background. Deflate ONLY the nearest visible rubber tire. Its lower sidewall must visibly collapse and bulge flat against the ground, with the rim lowered. Keep the rim undamaged. All other tires remain fully inflated; glass and metal panels remain undamaged. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+          "response_format": "b64_json",
+          "extra_body": {
+            "seed": 300,
+            "num_inference_steps": 40
+          }
+        }
+      ],
+      "calls": 1,
+      "duration_seconds": 200.849116563797
+    }
+  ]
+}

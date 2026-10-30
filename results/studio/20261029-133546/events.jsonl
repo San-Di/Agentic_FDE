@@ -1,0 +1,121 @@
+{"kind": "message", "role": "pipeline", "text": "The settings are the plan. Tracked excavator: Dents, Shattered windows. 3 positions × 3 backgrounds. Wheeled excavator: Flat tires. 3 positions × 3 backgrounds.", "t": 1793248548.3378081}
+{"kind": "image", "role": "reference", "path": "results/studio/20261029-133546/reference.jpg", "caption": "Reference photo for this run", "t": 1793248548.3380141}
+{"kind": "message", "role": "pipeline", "text": "Generating 27 images from 18 clean scenes. Checkpoint iter_000002000. No fine-tune.", "t": 1793248548.3380835}
+{"kind": "message", "role": "pipeline", "text": "Qwen Image Edit 2511 is already serving. Clean scenes will use it.", "t": 1793248548.3769896}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 1 of 18: Tracked excavator, side view, gravel rental yard.", "t": 1793248548.3771365}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/01_tracked.png", "caption": "Tracked excavator · side view · gravel rental yard", "t": 1793248749.3442507}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 2 of 18: Tracked excavator, side view, earthmoving construction site.", "t": 1793248749.3448832}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/02_tracked.png", "caption": "Tracked excavator · side view · earthmoving construction site", "t": 1793248951.366904}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 3 of 18: Tracked excavator, side view, quarry parking area.", "t": 1793248951.3674924}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/03_tracked.png", "caption": "Tracked excavator · side view · quarry parking area", "t": 1793249153.4432662}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 4 of 18: Tracked excavator, three-quarter view, gravel rental yard.", "t": 1793249153.4441054}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/04_tracked.png", "caption": "Tracked excavator · three-quarter view · gravel rental yard", "t": 1793249355.4134438}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 5 of 18: Tracked excavator, three-quarter view, earthmoving construction site.", "t": 1793249355.4144173}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/05_tracked.png", "caption": "Tracked excavator · three-quarter view · earthmoving construction site", "t": 1793249557.0351033}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 6 of 18: Tracked excavator, three-quarter view, quarry parking area.", "t": 1793249557.0358384}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/06_tracked.png", "caption": "Tracked excavator · three-quarter view · quarry parking area", "t": 1793249759.0570316}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 7 of 18: Tracked excavator, front view, gravel rental yard.", "t": 1793249759.0576997}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/07_tracked.png", "caption": "Tracked excavator · front view · gravel rental yard", "t": 1793249960.826215}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 8 of 18: Tracked excavator, front view, earthmoving construction site.", "t": 1793249960.8267756}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/08_tracked.png", "caption": "Tracked excavator · front view · earthmoving construction site", "t": 1793250162.6471474}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 9 of 18: Tracked excavator, front view, quarry parking area.", "t": 1793250162.6476178}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/09_tracked.png", "caption": "Tracked excavator · front view · quarry parking area", "t": 1793250364.9192238}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 10 of 18: Wheeled excavator, side view, gravel rental yard.", "t": 1793250364.9201088}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/10_wheeled.png", "caption": "Wheeled excavator · side view · gravel rental yard", "t": 1793250567.2911239}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 11 of 18: Wheeled excavator, side view, earthmoving construction site.", "t": 1793250567.2921689}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/11_wheeled.png", "caption": "Wheeled excavator · side view · earthmoving construction site", "t": 1793250769.8170176}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 12 of 18: Wheeled excavator, side view, quarry parking area.", "t": 1793250769.8178809}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/12_wheeled.png", "caption": "Wheeled excavator · side view · quarry parking area", "t": 1793250972.1386542}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 13 of 18: Wheeled excavator, three-quarter view, gravel rental yard.", "t": 1793250972.1391337}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/13_wheeled.png", "caption": "Wheeled excavator · three-quarter view · gravel rental yard", "t": 1793251174.2091384}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 14 of 18: Wheeled excavator, three-quarter view, earthmoving construction site.", "t": 1793251174.2098055}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/14_wheeled.png", "caption": "Wheeled excavator · three-quarter view · earthmoving construction site", "t": 1793251376.580804}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 15 of 18: Wheeled excavator, three-quarter view, quarry parking area.", "t": 1793251376.5812476}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/15_wheeled.png", "caption": "Wheeled excavator · three-quarter view · quarry parking area", "t": 1793251578.804928}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 16 of 18: Wheeled excavator, front view, gravel rental yard.", "t": 1793251578.8054955}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/16_wheeled.png", "caption": "Wheeled excavator · front view · gravel rental yard", "t": 1793251781.179079}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 17 of 18: Wheeled excavator, front view, earthmoving construction site.", "t": 1793251781.1795404}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/17_wheeled.png", "caption": "Wheeled excavator · front view · earthmoving construction site", "t": 1793251983.6033835}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 18 of 18: Wheeled excavator, front view, quarry parking area.", "t": 1793251983.6044528}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/18_wheeled.png", "caption": "Wheeled excavator · front view · quarry parking area", "t": 1793252186.0839102}
+{"kind": "message", "role": "pipeline", "text": "Stopping the image editor so AnomalyGen can use the GPU.", "t": 1793252186.0843182}
+{"kind": "message", "role": "pipeline", "text": "Placing dents masks with Cosmos3-Nano and SAM 2.", "t": 1793252189.1623313}
+{"kind": "error", "text": "The pipeline stopped: Mask placement wrote 0 rows for Dents; the grid asked for 9.", "t": 1793252594.5048609}
+{"kind": "message", "role": "pipeline", "text": "The settings are the plan. Tracked excavator: Dents, Shattered windows. 3 positions × 3 backgrounds. Wheeled excavator: Flat tires. 3 positions × 3 backgrounds.", "t": 1793252721.6962922}
+{"kind": "image", "role": "reference", "path": "results/studio/20261029-133546/reference.jpg", "caption": "Reference photo for this run", "t": 1793252721.6964705}
+{"kind": "message", "role": "pipeline", "text": "Generating 27 images from 18 clean scenes. Checkpoint iter_000002000. No fine-tune.", "t": 1793252721.69656}
+{"kind": "message", "role": "pipeline", "text": "Starting Qwen Image Edit 2511. The weights take several minutes to load.", "t": 1793252721.7506232}
+{"kind": "message", "role": "pipeline", "text": "Image edit is ready.", "t": 1793253191.8093112}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 1 of 18 is already saved. Keeping it.", "t": 1793253191.8096263}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/01_tracked.png", "caption": "Tracked excavator · side view · gravel rental yard", "t": 1793253191.8098292}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 2 of 18 is already saved. Keeping it.", "t": 1793253191.8114073}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/02_tracked.png", "caption": "Tracked excavator · side view · earthmoving construction site", "t": 1793253191.8118289}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 3 of 18 is already saved. Keeping it.", "t": 1793253191.8122604}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/03_tracked.png", "caption": "Tracked excavator · side view · quarry parking area", "t": 1793253191.8124027}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 4 of 18 is already saved. Keeping it.", "t": 1793253191.8127499}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/04_tracked.png", "caption": "Tracked excavator · three-quarter view · gravel rental yard", "t": 1793253191.8128889}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 5 of 18 is already saved. Keeping it.", "t": 1793253191.8132107}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/05_tracked.png", "caption": "Tracked excavator · three-quarter view · earthmoving construction site", "t": 1793253191.8133452}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 6 of 18 is already saved. Keeping it.", "t": 1793253191.8136802}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/06_tracked.png", "caption": "Tracked excavator · three-quarter view · quarry parking area", "t": 1793253191.8138058}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 7 of 18 is already saved. Keeping it.", "t": 1793253191.8141136}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/07_tracked.png", "caption": "Tracked excavator · front view · gravel rental yard", "t": 1793253191.814237}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 8 of 18 is already saved. Keeping it.", "t": 1793253191.814573}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/08_tracked.png", "caption": "Tracked excavator · front view · earthmoving construction site", "t": 1793253191.8147006}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 9 of 18 is already saved. Keeping it.", "t": 1793253191.815003}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/09_tracked.png", "caption": "Tracked excavator · front view · quarry parking area", "t": 1793253191.8151238}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 10 of 18 is already saved. Keeping it.", "t": 1793253191.8154318}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/10_wheeled.png", "caption": "Wheeled excavator · side view · gravel rental yard", "t": 1793253191.8155708}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 11 of 18 is already saved. Keeping it.", "t": 1793253191.8167384}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/11_wheeled.png", "caption": "Wheeled excavator · side view · earthmoving construction site", "t": 1793253191.8168898}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 12 of 18 is already saved. Keeping it.", "t": 1793253191.8172383}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/12_wheeled.png", "caption": "Wheeled excavator · side view · quarry parking area", "t": 1793253191.8173716}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 13 of 18 is already saved. Keeping it.", "t": 1793253191.8177483}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/13_wheeled.png", "caption": "Wheeled excavator · three-quarter view · gravel rental yard", "t": 1793253191.8178756}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 14 of 18 is already saved. Keeping it.", "t": 1793253191.8182225}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/14_wheeled.png", "caption": "Wheeled excavator · three-quarter view · earthmoving construction site", "t": 1793253191.8183537}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 15 of 18 is already saved. Keeping it.", "t": 1793253191.8187044}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/15_wheeled.png", "caption": "Wheeled excavator · three-quarter view · quarry parking area", "t": 1793253191.8188348}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 16 of 18 is already saved. Keeping it.", "t": 1793253191.8191602}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/16_wheeled.png", "caption": "Wheeled excavator · front view · gravel rental yard", "t": 1793253191.819291}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 17 of 18 is already saved. Keeping it.", "t": 1793253191.8196752}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/17_wheeled.png", "caption": "Wheeled excavator · front view · earthmoving construction site", "t": 1793253191.8198195}
+{"kind": "message", "role": "pipeline", "text": "Clean scene 18 of 18 is already saved. Keeping it.", "t": 1793253191.8210037}
+{"kind": "image", "role": "clean", "path": "results/studio/20261029-133546/scenes/18_wheeled.png", "caption": "Wheeled excavator · front view · quarry parking area", "t": 1793253191.8211405}
+{"kind": "message", "role": "pipeline", "text": "Stopping the image editor so AnomalyGen can use the GPU.", "t": 1793253191.822905}
+{"kind": "message", "role": "pipeline", "text": "Placing dents masks with Cosmos3-Nano and SAM 2.", "t": 1793253192.5735254}
+{"kind": "message", "role": "pipeline", "text": "Dents: 9 masks placed.", "t": 1793253404.3407784}
+{"kind": "message", "role": "pipeline", "text": "Placing shattered windows masks with Cosmos3-Nano and SAM 2.", "t": 1793253404.3410025}
+{"kind": "message", "role": "pipeline", "text": "Shattered windows: 9 masks placed.", "t": 1793253476.7837377}
+{"kind": "message", "role": "pipeline", "text": "Placing flat tires masks with Cosmos3-Nano and SAM 2.", "t": 1793253476.7839792}
+{"kind": "message", "role": "pipeline", "text": "Flat tires: 9 masks placed.", "t": 1793253560.790113}
+{"kind": "message", "role": "pipeline", "text": "Generating damage inside those masks with the step-2000 checkpoint. UniPC, 35 steps.", "t": 1793253560.7902367}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00000.png", "caption": "TrackedExcavator dent_00000", "t": 1793254095.7222445}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00001.png", "caption": "TrackedExcavator dent_00001", "t": 1793254095.72345}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00002.png", "caption": "TrackedExcavator dent_00002", "t": 1793254095.723621}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00003.png", "caption": "TrackedExcavator dent_00003", "t": 1793254095.7237484}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00004.png", "caption": "TrackedExcavator dent_00004", "t": 1793254095.7238786}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00005.png", "caption": "TrackedExcavator dent_00005", "t": 1793254095.723997}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00006.png", "caption": "TrackedExcavator dent_00006", "t": 1793254095.7241113}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00007.png", "caption": "TrackedExcavator dent_00007", "t": 1793254095.724236}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+dent_00008.png", "caption": "TrackedExcavator dent_00008", "t": 1793254095.7243679}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00000.png", "caption": "TrackedExcavator shattered_glass_00000", "t": 1793254095.724489}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00001.png", "caption": "TrackedExcavator shattered_glass_00001", "t": 1793254095.72464}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00002.png", "caption": "TrackedExcavator shattered_glass_00002", "t": 1793254095.7247517}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00003.png", "caption": "TrackedExcavator shattered_glass_00003", "t": 1793254095.7248633}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00004.png", "caption": "TrackedExcavator shattered_glass_00004", "t": 1793254095.7249742}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00005.png", "caption": "TrackedExcavator shattered_glass_00005", "t": 1793254095.7250836}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00006.png", "caption": "TrackedExcavator shattered_glass_00006", "t": 1793254095.7251909}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00007.png", "caption": "TrackedExcavator shattered_glass_00007", "t": 1793254095.7253003}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/TrackedExcavator+shattered_glass_00008.png", "caption": "TrackedExcavator shattered_glass_00008", "t": 1793254095.725408}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00000.png", "caption": "WheeledExcavator flat_tire_00000", "t": 1793254095.7255375}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00001.png", "caption": "WheeledExcavator flat_tire_00001", "t": 1793254095.725649}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00002.png", "caption": "WheeledExcavator flat_tire_00002", "t": 1793254095.7257562}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00003.png", "caption": "WheeledExcavator flat_tire_00003", "t": 1793254095.7258644}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00004.png", "caption": "WheeledExcavator flat_tire_00004", "t": 1793254095.7259722}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00005.png", "caption": "WheeledExcavator flat_tire_00005", "t": 1793254095.7260795}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00006.png", "caption": "WheeledExcavator flat_tire_00006", "t": 1793254095.7261882}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00007.png", "caption": "WheeledExcavator flat_tire_00007", "t": 1793254095.726295}
+{"kind": "image", "role": "damaged", "path": "results/studio/20261029-133546/sdg/reconstructed_image/WheeledExcavator+flat_tire_00008.png", "caption": "WheeledExcavator flat_tire_00008", "t": 1793254095.7264118}
+{"kind": "message", "role": "pipeline", "text": "Labels written. 41 COCO annotations in results/studio/20261029-133546/sdg/pseudo_labels/coco_annotations.json.", "t": 1793254129.0007246}
+{"kind": "done", "generated": 27, "held": 0, "labels": "results/studio/20261029-133546/sdg/pseudo_labels/coco_annotations.json", "t": 1793254129.000906}

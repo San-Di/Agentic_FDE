@@ -1,0 +1,44 @@
+{
+  "prompt": "Keep this exact photograph, viewpoint, equipment and background. Add ONLY one deep concave impact dent with sharp creases in the large painted metal side engine cover behind the cab. The panel remains attached. Use physically shaded folded metal, not painted markings. All glass and running gear remain intact. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+  "selections": {},
+  "caption_path": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/dent_depot.txt",
+  "output_media_path": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/dent_depot.png",
+  "input_media_path": "/home/ubuntu/cdf-excavator-route1/results/clean/dent_depot.png",
+  "control_media": {},
+  "captioning": {
+    "strategy": "text",
+    "template": "Keep this exact photograph, viewpoint, equipment and background. Add ONLY one deep concave impact dent with sharp creases in the large painted metal side engine cover behind the cab. The panel remains attached. Use physically shaded folded metal, not painted markings. All glass and running gear remain intact. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels."
+  },
+  "endpoints": [
+    {
+      "stage": "generation",
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1/images/edits",
+      "adapter": "openai.images.edits",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "timeout": 1200.0,
+      "requests": [
+        {
+          "image": [
+            "image.png",
+            {
+              "__elided__": "bytes",
+              "bytes": 1078659,
+              "sha256": "2030172529b2539df3a0ace5e74ea8b2bcb05ccb498b9b7d335dd7153c11bbe9"
+            },
+            "image/png"
+          ],
+          "prompt": "Keep this exact photograph, viewpoint, equipment and background. Add ONLY one deep concave impact dent with sharp creases in the large painted metal side engine cover behind the cab. The panel remains attached. Use physically shaded folded metal, not painted markings. All glass and running gear remain intact. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+          "response_format": "b64_json",
+          "extra_body": {
+            "seed": 304,
+            "num_inference_steps": 40
+          }
+        }
+      ],
+      "calls": 1,
+      "duration_seconds": 200.31483626365662
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+You are planning a small synthetic rental-equipment damage dataset from ONE reference photo.
+Inspect the photo carefully. User wants different excavator types, backgrounds and viewpoints,
+with exactly one visible damage category per image: flat_tire, shattered_glass, or dent.
+Flat tires require a WHEELED excavator, never caterpillar tracks. All other parts must be intact.
+We will use image editing for clean base variations, then train Cosmos AnomalyGen with annotated
+defect examples. No Omniverse. The supplied photo is a damaged reference, NOT a clean base.
+Verified source facts: this excavator has caterpillar tracks and NO rubber tires. Glass and body
+are both damaged. Do not invent a flat tire in the source.
+Return compact JSON only, under 1000 words, with: source_observations; observed_defects; absent_examples; limitations;
+clean_repair_prompt; six variants (id, excavator_type, background, viewpoint, target_defect,
+clean_generation_prompt, defect_edit_prompt, target_part); quality_checks.
+Include two variants per class and realistic parked rental machinery. Remove the person, text
+and logo in newly synthesized bases. Do not pretend one image supplies real examples of all classes.
+Synthetic bootstrapped training examples must be identified as synthetic, and all labels provisional.
+Each prompt must be under 35 words. No lists of mechanical systems. Never repeat sentences.
+Prompts must describe physically visible damage, not an accident narrative.

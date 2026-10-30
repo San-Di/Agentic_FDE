@@ -1,0 +1,130 @@
+{
+  "images": [
+    {
+      "image": "results/studio/20261030-142220/damaged/01_tracked_dent.png",
+      "mask": "results/studio/20261030-142220/masks/01_tracked_dent.png",
+      "clean": "results/studio/20261030-142220/scenes/01_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Dents",
+      "position": "side view",
+      "background": "gravel rental yard"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/02_tracked_dent.png",
+      "mask": "results/studio/20261030-142220/masks/02_tracked_dent.png",
+      "clean": "results/studio/20261030-142220/scenes/02_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Dents",
+      "position": "side view",
+      "background": "earthmoving construction site"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/03_tracked_dent.png",
+      "mask": "results/studio/20261030-142220/masks/03_tracked_dent.png",
+      "clean": "results/studio/20261030-142220/scenes/03_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Dents",
+      "position": "side view",
+      "background": "quarry parking area"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/04_tracked_dent.png",
+      "mask": "results/studio/20261030-142220/masks/04_tracked_dent.png",
+      "clean": "results/studio/20261030-142220/scenes/04_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Dents",
+      "position": "front view",
+      "background": "gravel rental yard"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/05_tracked_dent.png",
+      "mask": "results/studio/20261030-142220/masks/05_tracked_dent.png",
+      "clean": "results/studio/20261030-142220/scenes/05_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Dents",
+      "position": "front view",
+      "background": "earthmoving construction site"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/06_tracked_dent.png",
+      "mask": "results/studio/20261030-142220/masks/06_tracked_dent.png",
+      "clean": "results/studio/20261030-142220/scenes/06_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Dents",
+      "position": "front view",
+      "background": "quarry parking area"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/07_tracked_shattered_glass.png",
+      "mask": "results/studio/20261030-142220/masks/07_tracked_shattered_glass.png",
+      "clean": "results/studio/20261030-142220/scenes/01_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Shattered windows",
+      "position": "side view",
+      "background": "gravel rental yard"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/08_tracked_shattered_glass.png",
+      "mask": "results/studio/20261030-142220/masks/08_tracked_shattered_glass.png",
+      "clean": "results/studio/20261030-142220/scenes/02_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Shattered windows",
+      "position": "side view",
+      "background": "earthmoving construction site"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/09_tracked_shattered_glass.png",
+      "mask": "results/studio/20261030-142220/masks/09_tracked_shattered_glass.png",
+      "clean": "results/studio/20261030-142220/scenes/03_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Shattered windows",
+      "position": "side view",
+      "background": "quarry parking area"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/10_tracked_shattered_glass.png",
+      "mask": "results/studio/20261030-142220/masks/10_tracked_shattered_glass.png",
+      "clean": "results/studio/20261030-142220/scenes/04_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Shattered windows",
+      "position": "front view",
+      "background": "gravel rental yard"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/11_tracked_shattered_glass.png",
+      "mask": "results/studio/20261030-142220/masks/11_tracked_shattered_glass.png",
+      "clean": "results/studio/20261030-142220/scenes/05_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Shattered windows",
+      "position": "front view",
+      "background": "earthmoving construction site"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/12_tracked_shattered_glass.png",
+      "mask": "results/studio/20261030-142220/masks/12_tracked_shattered_glass.png",
+      "clean": "results/studio/20261030-142220/scenes/06_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Shattered windows",
+      "position": "front view",
+      "background": "quarry parking area"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/13_tracked_bucket_dent.png",
+      "mask": "results/studio/20261030-142220/masks/13_tracked_bucket_dent.png",
+      "clean": "results/studio/20261030-142220/scenes/01_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Dent on the claws / buckets",
+      "position": "side view",
+      "background": "gravel rental yard"
+    },
+    {
+      "image": "results/studio/20261030-142220/damaged/15_tracked_bucket_dent.png",
+      "mask": "results/studio/20261030-142220/masks/15_tracked_bucket_dent.png",
+      "clean": "results/studio/20261030-142220/scenes/03_tracked.png",
+      "machine": "Tracked excavator",
+      "damage": "Dent on the claws / buckets",
+      "position": "side view",
+      "background": "quarry parking area"
+    }
+  ]
+}

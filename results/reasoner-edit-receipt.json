@@ -1,0 +1,23 @@
+{
+  "pid": 245906,
+  "argv": [
+    "/home/ubuntu/env_vllm/bin/python",
+    "/home/ubuntu/env_vllm/bin/vllm",
+    "serve",
+    "nvidia/Cosmos-Reason2-8B",
+    "--served-model-name",
+    "cosmos-reason2",
+    "--port",
+    "8000",
+    "--max-model-len",
+    "32768",
+    "--gpu-memory-utilization",
+    "0.7",
+    "--limit-mm-per-prompt",
+    "{\"image\": 4, \"video\": 1}",
+    "--dtype",
+    "bfloat16"
+  ],
+  "cwd": "/home/ubuntu/agentic-fde-general",
+  "paused_at": 1793174945.6186488
+}

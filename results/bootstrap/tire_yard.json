@@ -1,0 +1,46 @@
+{
+  "prompt": "Edit the large central excavator tire in this close-up photograph to show a realistic punctured flat tire. Keep the metal wheel rim circular and attached to the axle. The bottom portion of this same tire is visibly compressed and creased under the machine weight, with its rubber sidewall bulging at the flattened contact with gravel. The upper tire tread and rim remain recognizable. This is one continuous tire, with no loose rubber, no extra tire and no detached parts. Preserve the camera viewpoint, background gravel and machine body. Natural documentary photo of a damaged rental equipment tire.",
+  "selections": {},
+  "caption_path": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.txt",
+  "output_media_path": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.png",
+  "input_media_path": "/home/ubuntu/cdf-excavator-route1/inputs/crops/tire_yard.png",
+  "control_media": {},
+  "captioning": {
+    "strategy": "text",
+    "template": "Edit the large central excavator tire in this close-up photograph to show a realistic punctured flat tire. Keep the metal wheel rim circular and attached to the axle. The bottom portion of this same tire is visibly compressed and creased under the machine weight, with its rubber sidewall bulging at the flattened contact with gravel. The upper tire tread and rim remain recognizable. This is one continuous tire, with no loose rubber, no extra tire and no detached parts. Preserve the camera viewpoint, background gravel and machine body. Natural documentary photo of a damaged rental equipment tire."
+  },
+  "endpoints": [
+    {
+      "stage": "generation",
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1/images/edits",
+      "adapter": "openai.images.edits",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "timeout": 1200.0,
+      "requests": [
+        {
+          "image": [
+            "image.png",
+            {
+              "__elided__": "bytes",
+              "bytes": 195597,
+              "sha256": "4564ebd82c82a26a8fb02011d50fd9ce93e95a04549125ed0d0a5958f929327c"
+            },
+            "image/png"
+          ],
+          "prompt": "Edit the large central excavator tire in this close-up photograph to show a realistic punctured flat tire. Keep the metal wheel rim circular and attached to the axle. The bottom portion of this same tire is visibly compressed and creased under the machine weight, with its rubber sidewall bulging at the flattened contact with gravel. The upper tire tread and rim remain recognizable. This is one continuous tire, with no loose rubber, no extra tire and no detached parts. Preserve the camera viewpoint, background gravel and machine body. Natural documentary photo of a damaged rental equipment tire.",
+          "response_format": "b64_json",
+          "extra_body": {
+            "seed": 340,
+            "num_inference_steps": 40,
+            "width": 768,
+            "height": 768
+          }
+        }
+      ],
+      "calls": 1,
+      "duration_seconds": 297.6719057559967
+    }
+  ]
+}

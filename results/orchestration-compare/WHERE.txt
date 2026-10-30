@@ -1,0 +1,13 @@
+CDF Orchestration original comparison.
+
+Airflow run excavator_compare_20261029d, pipeline_mode defect, succeeded 2026-10-29.
+Augmentation was not used. AnomalyGen painted on one reference photo with Cosmos3-Nano for the box, SAM 2 plus the training masks for the shape, and checkpoint iter_000002000 for the paint.
+
+Files in this folder:
+  TrackedExcavator+dent_00000.png
+  TrackedExcavator+shattered_glass_00000.png
+  WheeledExcavator+flat_tire_00000.png
+
+Reference photo for this run:
+  results/studio/20261029-133546/reference.jpg
+  Yellow LiuGong wheeled excavator. inputs/reference.jpg is a different photo and was not used.

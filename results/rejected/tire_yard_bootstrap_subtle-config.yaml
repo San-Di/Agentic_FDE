@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "inputs": {
+        "rgb": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_yard.png"
+      },
+      "output": {
+        "video": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.png",
+        "caption": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.txt",
+        "metadata": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.json"
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "adapter": "openai.images.edits",
+      "timeout": 1200
+    }
+  ],
+  "captioning": {
+    "llm": {
+      "text": "Keep this exact photograph, viewpoint, equipment and background. Deflate ONLY the nearest visible rubber tire. Its lower sidewall must visibly collapse and bulge flat against the ground, with the rim lowered. Keep the rim undamaged. All other tires remain fully inflated; glass and metal panels remain undamaged. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels."
+    }
+  },
+  "augmentation": {
+    "model": {
+      "name": "image-edit"
+    },
+    "parameters": {
+      "seed": 300,
+      "num_inference_steps": 40
+    }
+  },
+  "pipeline": {
+    "retry": 0
+  }
+}

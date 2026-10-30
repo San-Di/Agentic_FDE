@@ -1,0 +1,31 @@
+{
+  "id": "20261030-142220",
+  "prompt": "Rental excavators and big trucks. Build a labeled damage dataset for return inspection from this photo: dents, flat tires, shattered windows, and a dent on the bucket, across different machines, viewpoints, and places.",
+  "reference": "inputs/reference.jpg",
+  "settings": {
+    "pipeline": "sunburst",
+    "total": 15,
+    "varieties": 4,
+    "machines": [
+      "tracked",
+      "wheeled",
+      "dump",
+      "haul"
+    ],
+    "damages": [
+      "dent",
+      "flat_tire",
+      "shattered_glass",
+      "bucket_dent"
+    ],
+    "positions": [
+      "side view",
+      "front view"
+    ],
+    "backgrounds": [
+      "gravel rental yard",
+      "earthmoving construction site",
+      "quarry parking area"
+    ]
+  }
+}

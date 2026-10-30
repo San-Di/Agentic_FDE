@@ -1,0 +1,139 @@
+{
+  "source_sha256": "f2a74d3ae32672b2710756bfe12bc93051f4ad833d0d404a3bdcd97da92b5b54",
+  "annotations": [
+    {
+      "class": "shattered_glass",
+      "crop": [
+        305,
+        5,
+        510,
+        351
+      ],
+      "polygons": [
+        [
+          [
+            347,
+            63
+          ],
+          [
+            435,
+            34
+          ],
+          [
+            440,
+            210
+          ],
+          [
+            331,
+            224
+          ]
+        ],
+        [
+          [
+            450,
+            36
+          ],
+          [
+            478,
+            27
+          ],
+          [
+            488,
+            145
+          ],
+          [
+            466,
+            220
+          ],
+          [
+            444,
+            218
+          ]
+        ],
+        [
+          [
+            330,
+            249
+          ],
+          [
+            428,
+            242
+          ],
+          [
+            421,
+            325
+          ],
+          [
+            338,
+            331
+          ]
+        ]
+      ],
+      "image_provenance": "one user-supplied real photograph",
+      "annotation_provenance": "agent-drawn provisional polygon",
+      "independent_holdout": false
+    },
+    {
+      "class": "dent",
+      "crop": [
+        470,
+        320,
+        826,
+        452
+      ],
+      "polygons": [
+        [
+          [
+            503,
+            355
+          ],
+          [
+            545,
+            332
+          ],
+          [
+            597,
+            344
+          ],
+          [
+            643,
+            348
+          ],
+          [
+            683,
+            337
+          ],
+          [
+            768,
+            350
+          ],
+          [
+            811,
+            375
+          ],
+          [
+            795,
+            406
+          ],
+          [
+            707,
+            434
+          ],
+          [
+            515,
+            420
+          ],
+          [
+            483,
+            393
+          ]
+        ]
+      ],
+      "image_provenance": "one user-supplied real photograph",
+      "annotation_provenance": "agent-drawn provisional polygon",
+      "independent_holdout": false
+    }
+  ],
+  "flat_tire_reference": null,
+  "warning": "All crops share the same source photograph; no real test split exists."
+}

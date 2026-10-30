@@ -1,0 +1,44 @@
+{
+  "prompt": "Repair the excavator in this photograph completely. Replace every shattered cab window with intact clear glass. Rebuild the crushed yellow engine housing and rear panels as smooth intact painted metal enclosing the radiator. Remove the worker, clipboard and top-right logo. Preserve the tracked excavator and camera view. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+  "selections": {},
+  "caption_path": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired.txt",
+  "output_media_path": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired.png",
+  "input_media_path": "/home/ubuntu/cdf-excavator-route1/inputs/reference.jpg",
+  "control_media": {},
+  "captioning": {
+    "strategy": "text",
+    "template": "Repair the excavator in this photograph completely. Replace every shattered cab window with intact clear glass. Rebuild the crushed yellow engine housing and rear panels as smooth intact painted metal enclosing the radiator. Remove the worker, clipboard and top-right logo. Preserve the tracked excavator and camera view. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels."
+  },
+  "endpoints": [
+    {
+      "stage": "generation",
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1/images/edits",
+      "adapter": "openai.images.edits",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "timeout": 1200.0,
+      "requests": [
+        {
+          "image": [
+            "image.jpeg",
+            {
+              "__elided__": "bytes",
+              "bytes": 189053,
+              "sha256": "f2a74d3ae32672b2710756bfe12bc93051f4ad833d0d404a3bdcd97da92b5b54"
+            },
+            "image/jpeg"
+          ],
+          "prompt": "Repair the excavator in this photograph completely. Replace every shattered cab window with intact clear glass. Rebuild the crushed yellow engine housing and rear panels as smooth intact painted metal enclosing the radiator. Remove the worker, clipboard and top-right logo. Preserve the tracked excavator and camera view. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+          "response_format": "b64_json",
+          "extra_body": {
+            "seed": 100,
+            "num_inference_steps": 30
+          }
+        }
+      ],
+      "calls": 1,
+      "duration_seconds": 51.78407955169678
+    }
+  ]
+}

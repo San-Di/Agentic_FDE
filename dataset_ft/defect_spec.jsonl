@@ -1,0 +1,3 @@
+{"defect_type": "WheeledExcavator+flat_tire", "spatial_dependency": "text", "roi_prompt_defect_location": "the rubber tire, excluding the wheel hub, the machine body, and the ground"}
+{"defect_type": "TrackedExcavator+shattered_glass", "spatial_dependency": "text", "roi_prompt_defect_location": "the cab window glass, excluding the metal frame and the rest of the machine"}
+{"defect_type": "TrackedExcavator+dent", "spatial_dependency": "text", "roi_prompt_defect_location": "the metal body panel, excluding the glass, tracks, and background"}

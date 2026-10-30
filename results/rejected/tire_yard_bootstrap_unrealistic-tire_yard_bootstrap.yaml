@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "inputs": {
+        "rgb": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_yard.png"
+      },
+      "output": {
+        "video": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.png",
+        "caption": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.txt",
+        "metadata": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.json"
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "adapter": "openai.images.edits",
+      "timeout": 1200
+    }
+  ],
+  "captioning": {
+    "llm": {
+      "text": "The large nearest foreground tire directly beneath the cab has been punctured and has NO AIR. Make this ONE tire completely flat under the excavator weight: its lower sidewall collapses into crumpled folded rubber that bulges widely along the ground. The metal rim drops very close to the ground, visibly much lower than on the other tires. Show an obvious wide flattened contact patch. Allow slight natural settling at this wheel. Preserve the same excavator, camera and background. All other tires stay fully inflated. All glass, metal panels, boom and bucket remain intact and undamaged. Realistic inspection photograph."
+    }
+  },
+  "augmentation": {
+    "model": {
+      "name": "image-edit"
+    },
+    "parameters": {
+      "seed": 330,
+      "num_inference_steps": 40
+    }
+  },
+  "pipeline": {
+    "retry": 0
+  }
+}

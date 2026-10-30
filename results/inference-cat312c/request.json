@@ -1,0 +1,11 @@
+{
+  "request": "rental excavators and big truck machine damage detection",
+  "reference_photo": "inputs/cat312c_reference.png",
+  "observed_damage": "TrackedExcavator+dent",
+  "where": "black CAT 312C side panel, crushed inward in the customer photo",
+  "checkpoint": "anomaly-results/anomalygen/rental_equipment_damage/anomalygen_texture_ft/checkpoints/model/iter_000002000.pt",
+  "fine_tune": false,
+  "planner": "not called; Cosmos Reason2 8B is paused. The photo itself shows a side-panel dent on a tracked CAT 312C.",
+  "clean_scene": "CDF Augmentation 1.2.0 + Qwen Image Edit 2511 repaired the crushed panel",
+  "mask": "polygon on the restored CAT 312C panel, the same door that is crushed in the reference photo"
+}

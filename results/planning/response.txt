@@ -1,0 +1,35 @@
+{
+  "source_observations": "The excavator has caterpillar tracks, no rubber tires, shattered glass on the cabin windows, and body dents. It is parked outdoors near industrial equipment under overcast skies. A worker inspects it while holding a clipboard. The Impact Rentals logo appears in the top-right corner",
+  "observed_defects": [
+    "shattered_glass",
+    "dent"
+  ],
+  "absent_examples": {
+    "flat_tire": true
+  },
+  "limitations": "No omniverse rendering allowed. Synthetic images must indicate their artificial nature. Clean generation prompts must specify removal of original defects. Defect edits must align with physical realism and avoid impossible scenarios."
+,
+  "clean_repair_prompt": "Remove all existing damage including broken glass and metal deformations. Restore structural integrity to match pre-impact condition. Eliminate any visual artifacts introduced during cleanup. Preserve original color scheme and surface texture where possible",
+  "variants": [
+    {
+      "id": 1,
+      "excavator_type": "Wheeled Excavator",
+      "background": "Industrial Yard",
+      "viewpoint": "Front Three-Quarter View",
+      "target_defect": "Flat Tire",
+      "clean_generation_prompt": "Generate a wheeled excavator without tracks, pristine exterior, undamaged cab, and functional components. Ensure no signs of wear or impact marks remain on the chassis or wheels",
+      "defect_edit_prompt": "Introduce a visibly deflated front left tire with sidewall scuffing and rim deformation. Leave surrounding structure untouched except for minor dust accumulation around the wheel well area",
+      "target_part": "Tire"
+    },
+    {
+      "id": 2,
+      "excavator_type": "Caterpillar Track Excavator",
+      "background": "Construction Site",
+      "viewpoint": "Side Profile",
+      "target_defect": "Shattered Glass",
+      "clean_generation_prompt": "Create a Caterpillar track excavator with intact windshield and side windows. Maintain consistent paint finish and lighting reflections across all surfaces. Exclude any human presence or branding elements",
+      "defect_edit_prompt": "Replace the driver\u2019s side window with multiple cracks radiating from a central point, simulating impact damage. Retain transparency elsewhere but add subtle dirt smudges along edges",
+      "target_part": "Glass Window"
+    }
+  ]
+}

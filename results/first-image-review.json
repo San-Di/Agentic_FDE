@@ -1,0 +1,6 @@
+{
+  "image": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired.png",
+  "accepted": false,
+  "reason": "Prominent painterly/mosaic texture; clean glass and panel quality not convincing",
+  "next_test": "50 steps, revised prompt; keep failed output"
+}

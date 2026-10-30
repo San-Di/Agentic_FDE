@@ -1,0 +1,26 @@
+{
+  "job": {
+    "id": "glass_site",
+    "stage": "clean",
+    "source": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_road.png",
+    "output": "/home/ubuntu/cdf-excavator-route1/results/clean/glass_site.png",
+    "prompt": "Edit this photograph of ONE excavator. Replace its four rubber wheels and wheeled chassis with a conventional tracked excavator undercarriage with TWO continuous steel crawler tracks. Keep ONE cab, ONE engine housing, ONE articulated hydraulic boom, and ONE digging bucket connected as a single physically coherent excavator. Repaint its orange panels yellow. Replace the roadside background with an earthmoving construction site. Keep the same three-quarter camera viewpoint and natural photographic lighting. The single excavator is parked and undamaged: clear intact glass, smooth metal panels, intact steel tracks. No wheels, no duplicate cab, no second machine overlapping it. Realistic rental inspection photo.",
+    "seed": 240,
+    "config": "/home/ubuntu/cdf-excavator-route1/configs/glass_site.yaml"
+  },
+  "command": [
+    "docker",
+    "exec",
+    "cdf-route1-augmentation",
+    "uv",
+    "run",
+    "--no-sync",
+    "/workspace/modules/cli.py",
+    "--config",
+    "/home/ubuntu/cdf-excavator-route1/configs/glass_site.yaml"
+  ],
+  "image_id": "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+  "exit_code": 0,
+  "elapsed_seconds": 482.4461598396301,
+  "output_exists": true
+}

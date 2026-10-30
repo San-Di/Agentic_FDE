@@ -1,0 +1,37 @@
+{
+  "id": "chatcmpl-b481fd61a1e45879",
+  "object": "chat.completion",
+  "created": 1793174823,
+  "model": "cosmos-reason2",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"source_observations\": \"The excavator has caterpillar tracks, no rubber tires, shattered glass on the cabin windows, and body dents. It is parked outdoors near industrial equipment under overcast skies. A worker inspects it while holding a clipboard. The Impact Rentals logo appears in the top-right corner\",\n  \"observed_defects\": [\n    \"shattered_glass\",\n    \"dent\"\n  ],\n  \"absent_examples\": {\n    \"flat_tire\": true\n  },\n  \"limitations\": \"No omniverse rendering allowed. Synthetic images must indicate their artificial nature. Clean generation prompts must specify removal of original defects. Defect edits must align with physical realism and avoid impossible scenarios.\"\n,\n  \"clean_repair_prompt\": \"Remove all existing damage including broken glass and metal deformations. Restore structural integrity to match pre-impact condition. Eliminate any visual artifacts introduced during cleanup. Preserve original color scheme and surface texture where possible\",\n  \"variants\": [\n    {\n      \"id\": 1,\n      \"excavator_type\": \"Wheeled Excavator\",\n      \"background\": \"Industrial Yard\",\n      \"viewpoint\": \"Front Three-Quarter View\",\n      \"target_defect\": \"Flat Tire\",\n      \"clean_generation_prompt\": \"Generate a wheeled excavator without tracks, pristine exterior, undamaged cab, and functional components. Ensure no signs of wear or impact marks remain on the chassis or wheels\",\n      \"defect_edit_prompt\": \"Introduce a visibly deflated front left tire with sidewall scuffing and rim deformation. Leave surrounding structure untouched except for minor dust accumulation around the wheel well area\",\n      \"target_part\": \"Tire\"\n    },\n    {\n      \"id\": 2,\n      \"excavator_type\": \"Caterpillar Track Excavator\",\n      \"background\": \"Construction Site\",\n      \"viewpoint\": \"Side Profile\",\n      \"target_defect\": \"Shattered Glass\",\n      \"clean_generation_prompt\": \"Create a Caterpillar track excavator with intact windshield and side windows. Maintain consistent paint finish and lighting reflections across all surfaces. Exclude any human presence or branding elements\",\n      \"defect_edit_prompt\": \"Replace the driver\\u2019s side window with multiple cracks radiating from a central point, simulating impact damage. Retain transparency elsewhere but add subtle dirt smudges along edges\",\n      \"target_part\": \"Glass Window\"\n    }\n  ]\n}",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.24.0-31626db5",
+  "usage": {
+    "prompt_tokens": 807,
+    "total_tokens": 1313,
+    "completion_tokens": 506,
+    "prompt_tokens_details": null
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null
+}

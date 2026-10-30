@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "inputs": {
+        "rgb": "/home/ubuntu/cdf-excavator-route1/inputs/reference.jpg"
+      },
+      "output": {
+        "video": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired_hq.png",
+        "caption": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired_hq.txt",
+        "metadata": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired_hq.json"
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "adapter": "openai.images.edits",
+      "timeout": 1200
+    }
+  ],
+  "captioning": {
+    "llm": {
+      "text": "Edit this real machinery photograph. Restore the excavator to undamaged rental condition: clear intact cab glass, smooth intact yellow steel body panels, radiator enclosed by its normal metal cover. Remove the worker and top-right logo. Preserve the camera angle and lighting. Crisp realistic photography, natural metal paint and glass reflections."
+    }
+  },
+  "augmentation": {
+    "model": {
+      "name": "image-edit"
+    },
+    "parameters": {
+      "seed": 101,
+      "num_inference_steps": 50
+    }
+  },
+  "pipeline": {
+    "retry": 0
+  }
+}

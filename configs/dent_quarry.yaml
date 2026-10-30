@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "inputs": {
+        "rgb": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_road.png"
+      },
+      "output": {
+        "video": "/home/ubuntu/cdf-excavator-route1/results/clean/dent_quarry.png",
+        "caption": "/home/ubuntu/cdf-excavator-route1/results/clean/dent_quarry.txt",
+        "metadata": "/home/ubuntu/cdf-excavator-route1/results/clean/dent_quarry.json"
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "adapter": "openai.images.edits",
+      "timeout": 1200
+    }
+  ],
+  "captioning": {
+    "llm": {
+      "text": "Edit this photograph of ONE excavator. Replace its four rubber wheels and wheeled chassis with a conventional tracked excavator undercarriage with TWO continuous steel crawler tracks. Keep ONE cab, ONE engine housing, ONE articulated hydraulic boom, and ONE digging bucket connected as a single physically coherent excavator. Repaint its orange panels blue. Replace the roadside background with a gravel quarry parking area. Keep the same three-quarter camera viewpoint and natural photographic lighting. The single excavator is parked and undamaged: clear intact glass, smooth metal panels, intact steel tracks. No wheels, no duplicate cab, no second machine overlapping it. Realistic rental inspection photo."
+    }
+  },
+  "augmentation": {
+    "model": {
+      "name": "image-edit"
+    },
+    "parameters": {
+      "seed": 242,
+      "num_inference_steps": 40
+    }
+  },
+  "pipeline": {
+    "retry": 0
+  }
+}

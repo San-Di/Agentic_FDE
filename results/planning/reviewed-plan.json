@@ -1,0 +1,61 @@
+{
+  "source": "One supplied real photograph; two visible defects on a tracked machine",
+  "model_plan_review": "Planner produced only two variants; agent expanded to required six and removed extra rim deformation from flat-tire prompt.",
+  "variants": [
+    {
+      "id": "tire_yard",
+      "defect": "flat_tire",
+      "texture": "WheeledExcavator",
+      "machine": "a compact yellow wheeled excavator with four rubber tires and no tracks",
+      "background": "a gravel rental yard",
+      "view": "front left three-quarter view at wheel height",
+      "training_reference_provenance": "Qwen synthetic bootstrap; not additional real evidence"
+    },
+    {
+      "id": "tire_road",
+      "defect": "flat_tire",
+      "texture": "WheeledExcavator",
+      "machine": "a large orange wheeled excavator with four rubber tires and no tracks",
+      "background": "a closed paved roadside work area",
+      "view": "left side view at wheel height",
+      "training_reference_provenance": "Qwen synthetic bootstrap; not additional real evidence"
+    },
+    {
+      "id": "glass_site",
+      "defect": "shattered_glass",
+      "texture": "TrackedExcavator",
+      "machine": "a medium yellow tracked excavator",
+      "background": "an earthmoving construction site",
+      "view": "front left three-quarter view close enough to inspect the cab glass",
+      "training_reference_provenance": "Qwen synthetic bootstrap; not additional real evidence"
+    },
+    {
+      "id": "glass_farm",
+      "defect": "shattered_glass",
+      "texture": "TrackedExcavator",
+      "machine": "a compact white tracked mini excavator with an enclosed glass cab",
+      "background": "a farm equipment parking area",
+      "view": "left side view close enough to inspect the cab window",
+      "training_reference_provenance": "Qwen synthetic bootstrap; not additional real evidence"
+    },
+    {
+      "id": "dent_depot",
+      "defect": "dent",
+      "texture": "TrackedExcavator",
+      "machine": "a large orange tracked excavator",
+      "background": "a concrete equipment depot",
+      "view": "rear left three-quarter view showing the side engine housing and cab",
+      "training_reference_provenance": "Qwen synthetic bootstrap; not additional real evidence"
+    },
+    {
+      "id": "dent_quarry",
+      "defect": "dent",
+      "texture": "TrackedExcavator",
+      "machine": "a medium blue tracked excavator",
+      "background": "a gravel quarry parking area",
+      "view": "left side view showing the engine cover and cab",
+      "training_reference_provenance": "Qwen synthetic bootstrap; not additional real evidence"
+    }
+  ],
+  "labels": "Provisional masks and boxes; validate visible output before training a detector"
+}

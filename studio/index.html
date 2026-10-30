@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dataset studio</title>
+<style>
+  :root {
+    --bg: #101310;
+    --panel: #181c18;
+    --panel-2: #20261f;
+    --line: #31382f;
+    --text: #e8eee4;
+    --muted: #9aa394;
+    --yellow: #f0c14b;
+    --yellow-ink: #2a220c;
+    --green: #b7d7a8;
+    --hold: #e2b48a;
+    --user: #243126;
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); }
+  body {
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    letter-spacing: 0.01em;
+  }
+  button, input, textarea { font: inherit; color: inherit; }
+  .app {
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+  }
+  .chat, .settings { min-height: 0; display: flex; flex-direction: column; }
+  .chat { border-right: 1px solid var(--line); }
+  header, .settings-head {
+    padding: 22px 24px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mark {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  }
+  h1 { margin: 0; font-size: 22px; font-weight: 600; }
+  h2 { margin: 0; font-size: 18px; font-weight: 600; }
+  .lede { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+  .thread {
+    flex: 1; overflow: auto; padding: 22px 24px 8px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .kicker {
+    margin: 8px 0 0; color: var(--yellow); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .bubble {
+    max-width: 680px; padding: 12px 14px; border-radius: 16px;
+    line-height: 1.45; font-size: 15px;
+  }
+  .bubble.user { align-self: flex-end; background: var(--user); border-bottom-right-radius: 4px; }
+  .bubble.pipeline, .bubble.sample { align-self: flex-start; background: var(--panel-2); border-bottom-left-radius: 4px; }
+  .bubble img {
+    display: block; margin-top: 10px; width: min(100%, 420px); border-radius: 10px; background: #0c0e0c;
+  }
+  .result {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px;
+  }
+  .result figure { margin: 0; }
+  .result img { width: 100%; margin-top: 0; }
+  .result figcaption { margin-top: 4px; color: var(--muted); font-size: 12px; }
+  .runs { display: grid; gap: 6px; }
+  .run {
+    text-align: left; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px;
+    background: var(--panel-2); color: var(--text); cursor: pointer;
+  }
+  .modes { display: grid; gap: 8px; margin-top: 16px; }
+  .mode {
+    display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: start;
+    padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel-2);
+  }
+  .mode input { margin-top: 3px; accent-color: var(--yellow); }
+  .mode small { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; line-height: 1.35; }
+  .reference-card {
+    display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: center;
+    align-self: stretch; max-width: 680px; padding: 10px;
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 16px;
+  }
+  .reference-card img {
+    width: 112px; height: 84px; object-fit: cover; border-radius: 10px; background: #0c0e0c; cursor: zoom-in;
+  }
+  .reference-card.open { grid-template-columns: 1fr; }
+  .reference-card.open img { width: 100%; height: auto; max-height: 280px; cursor: zoom-out; }
+  .reference-card p { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+  .reference-card strong { font-size: 14px; }
+  .chip {
+    align-self: end; width: 42px; height: 42px; border-radius: 12px; object-fit: cover;
+    border: 1px solid var(--line); background: #0c0e0c;
+  }
+  .who { display: block; margin-bottom: 4px; color: var(--muted); font-size: 12px; }
+  .composer {
+    display: grid; grid-template-columns: auto auto 1fr auto; gap: 8px;
+    padding: 14px 16px 16px; border-top: 1px solid var(--line); background: #141814;
+  }
+  textarea, .field input, .field textarea {
+    width: 100%; background: #101410; border: 1px solid var(--line); border-radius: 12px;
+    padding: 10px 12px; resize: vertical;
+  }
+  textarea:focus, .field input:focus, .field textarea:focus {
+    outline: 2px solid var(--yellow); border-color: transparent;
+  }
+  .composer textarea { min-height: 64px; max-height: 140px; }
+  .file {
+    align-self: end; position: relative; width: 42px; height: 42px; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--panel-2); cursor: pointer;
+  }
+  .file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .file span { display: grid; place-items: center; height: 100%; font-size: 18px; }
+  .send, .start, .ghost {
+    border: 0; border-radius: 12px; cursor: pointer; font-weight: 600;
+  }
+  .send, .start { background: var(--yellow); color: var(--yellow-ink); }
+  .send { align-self: end; height: 42px; padding: 0 16px; }
+  button:disabled { opacity: 0.45; cursor: default; }
+  .settings { background: var(--panel); }
+  .settings-body { flex: 1; overflow: auto; padding: 8px 20px 20px; }
+  .total-card {
+    margin-top: 16px; padding: 14px; border-radius: 16px; background: var(--panel-2);
+    border: 1px solid var(--line);
+  }
+  .total-card strong { display: block; font-size: 32px; line-height: 1; }
+  .total-card span { color: var(--muted); font-size: 13px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .field { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; }
+  .field label, .group-label {
+    font-size: 13px; font-weight: 600;
+  }
+  .hint { color: var(--muted); font-size: 12px; line-height: 1.4; }
+  .choice {
+    display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: start;
+    padding: 10px 0; border-bottom: 1px solid var(--line);
+  }
+  .choice input { margin-top: 3px; accent-color: var(--yellow); }
+  .choice b { font-weight: 600; }
+  .pill {
+    display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px;
+    font-size: 11px; font-weight: 600; vertical-align: 1px;
+  }
+  .pill.ready { background: #243224; color: var(--green); }
+  .pill.wait { background: #33281d; color: var(--hold); }
+  .choice small { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; line-height: 1.35; }
+  .summary { margin: 12px 0 0; padding: 0; list-style: none; }
+  .summary li { margin: 0 0 6px; color: var(--muted); font-size: 13px; line-height: 1.4; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .start { height: 44px; padding: 0 16px; }
+  .ghost {
+    height: 44px; padding: 0 12px; background: transparent; color: var(--text);
+    border: 1px solid var(--line);
+  }
+  .foot {
+    padding: 12px 20px 16px; border-top: 1px solid var(--line); background: #141814;
+  }
+  .foot-actions { display: flex; gap: 8px; }
+  .status { min-height: 18px; margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+  @media (max-width: 980px) {
+    .app { grid-template-columns: 1fr; height: auto; }
+    .chat { border-right: 0; border-bottom: 1px solid var(--line); min-height: 70vh; }
+    .settings { min-height: 100vh; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="chat">
+    <header>
+      <div class="mark">
+        <h1>Dataset studio</h1>
+      </div>
+      <p class="lede">Describe the inspection job in the chat. The panel on the right decides how many images, machines, damages, viewpoints, and places the pipeline will make. Start runs that job on the GPU server.</p>
+    </header>
+    <div class="thread" id="thread">
+      <p class="kicker">Reference photo</p>
+      <article class="reference-card" id="reference-card">
+        <img id="reference-thumb" src="/media/inputs/reference.jpg" alt="Reference photo of a damaged excavator" role="button" tabindex="0">
+        <div>
+          <span class="who">This photo goes with the run</span>
+          <strong id="reference-name">Sample excavator photo</strong>
+          <p id="reference-note">Small review of the built-in sample. Attach another photo and this updates before you send.</p>
+        </div>
+      </article>
+      <p class="kicker">Sample</p>
+      <article class="bubble user">
+        <span class="who">You</span>
+        Rental excavators and big trucks. Build a labeled damage dataset for return inspection from this photo.
+      </article>
+      <article class="bubble sample">
+        <span class="who">Studio</span>
+        The dataset shape is the panel on the right. Set the count, machines, and damages. Press Start pipeline. GPT makes each clean photo, then the mask and the painted damage. The server lists each photo with its label.
+      </article>
+      <p class="kicker" id="live-kicker" hidden>This run</p>
+      <div id="live"></div>
+    </div>
+    <form class="composer" id="composer">
+      <label class="file" title="Attach a reference photo">
+        <input id="photo" type="file" accept="image/*">
+        <span>+</span>
+      </label>
+      <img class="chip" id="reference-chip" src="/media/inputs/reference.jpg" alt="Reference photo">
+      <textarea id="prompt" rows="2">Rental excavators and big trucks. Build a labeled damage dataset for return inspection from this photo: dents, flat tires, shattered windows, and a dent on the bucket, across different machines, viewpoints, and places.</textarea>
+      <button class="send" type="submit">Send</button>
+    </form>
+  </section>
+  <aside class="settings">
+    <div class="settings-head">
+      <h2>Dataset settings</h2>
+      <p class="lede">These values are the plan. GPT makes the clean photos. A new mask is drawn on each one, then the damage is painted inside that mask.</p>
+    </div>
+    <form class="settings-body" id="settings">
+      <div class="total-card">
+        <span id="total-caption">Images this run will generate</span>
+        <strong id="total-number">27</strong>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <label for="total">Total images</label>
+          <input id="total" type="number" min="1" max="48" value="27">
+        </div>
+        <div class="field">
+          <label for="varieties">Machine varieties</label>
+          <input id="varieties" type="number" min="1" max="4" value="2">
+        </div>
+        <div class="field">
+          <label for="position-count">Camera positions</label>
+          <input id="position-count" type="number" min="1" max="6" value="3">
+        </div>
+        <div class="field">
+          <label for="background-count">Background scenes</label>
+          <input id="background-count" type="number" min="1" max="6" value="3">
+        </div>
+      </div>
+      <p class="hint">Varieties uses the first checked machines, from the top of the list. Positions and backgrounds name each slot in the grid.</p>
+      <div class="field">
+        <label for="positions">Position names</label>
+        <textarea id="positions" rows="3">side view
+three-quarter view
+front view</textarea>
+      </div>
+      <div class="field">
+        <label for="backgrounds">Background names</label>
+        <textarea id="backgrounds" rows="3">gravel rental yard
+earthmoving construction site
+quarry parking area</textarea>
+      </div>
+      <p class="group-label">Machines</p>
+      <label class="choice"><input type="checkbox" name="machine" value="tracked" checked><span><b>Tracked excavator</b><span class="pill ready">adapter ready</span><small>Steel tracks. Body dents and shattered windows.</small></span></label>
+      <label class="choice"><input type="checkbox" name="machine" value="wheeled" checked><span><b>Wheeled excavator</b><span class="pill ready">adapter ready</span><small>Rubber tires. Flat tires.</small></span></label>
+      <label class="choice"><input type="checkbox" name="machine" value="dump"><span><b>Articulated dump truck</b><span class="pill wait" data-sunburst="included" data-anomalygen="needs fine-tune">included</span><small class="mode-note" data-sunburst="Body, glass, tires, and bucket." data-anomalygen="Recorded in the request. No truck adapter yet.">Body, glass, tires, and bucket.</small></span></label>
+      <label class="choice"><input type="checkbox" name="machine" value="haul"><span><b>Rigid haul truck</b><span class="pill wait" data-sunburst="included" data-anomalygen="needs fine-tune">included</span><small class="mode-note" data-sunburst="Body, glass, tires, and bucket." data-anomalygen="Recorded in the request. No truck adapter yet.">Body, glass, tires, and bucket.</small></span></label>
+      <p class="group-label">Damages</p>
+      <label class="choice"><input type="checkbox" name="damage" value="dent" checked><span><b>Dents</b><span class="pill ready">adapter ready</span><small>Side and body panels on tracked excavators.</small></span></label>
+      <label class="choice"><input type="checkbox" name="damage" value="flat_tire" checked><span><b>Flat tires</b><span class="pill ready">adapter ready</span><small>Wheeled excavators.</small></span></label>
+      <label class="choice"><input type="checkbox" name="damage" value="shattered_glass" checked><span><b>Shattered windows</b><span class="pill ready">adapter ready</span><small>Cab glass on tracked excavators.</small></span></label>
+      <label class="choice"><input type="checkbox" name="damage" value="bucket_dent"><span><b>Dent on the claws / buckets</b><span class="pill wait" data-sunburst="included" data-anomalygen="needs fine-tune">included</span><small class="mode-note" data-sunburst="Painted on the bucket of each checked machine." data-anomalygen="Recorded in the request. This adapter is not trained.">Painted on the bucket of each checked machine.</small></span></label>
+      <ul class="summary" id="summary"></ul>
+      <p class="group-label">Saved runs</p>
+      <div class="runs" id="runs"></div>
+      <div class="actions">
+        <button class="ghost" type="button" id="smoke">1 position, 1 background</button>
+        <button class="ghost" type="button" id="full">Restore 3 and 3</button>
+      </div>
+    </form>
+    <div class="foot">
+      <div class="foot-actions">
+        <button class="start" type="button" id="start">Start pipeline</button>
+        <button class="ghost" type="button" id="continue">Continue</button>
+      </div>
+      <p class="status" id="status"></p>
+    </div>
+  </aside>
+</div>
+<script>
+const promptBox = document.querySelector("#prompt");
+const live = document.querySelector("#live");
+const liveKicker = document.querySelector("#live-kicker");
+const summary = document.querySelector("#summary");
+const statusLine = document.querySelector("#status");
+const startButton = document.querySelector("#start");
+const continueButton = document.querySelector("#continue");
+const jobsBase = location.origin;
+const totalInput = document.querySelector("#total");
+const totalNumber = document.querySelector("#total-number");
+const varietiesInput = document.querySelector("#varieties");
+const positionCount = document.querySelector("#position-count");
+const backgroundCount = document.querySelector("#background-count");
+const positionBox = document.querySelector("#positions");
+const backgroundBox = document.querySelector("#backgrounds");
+let photoData = null;
+let totalTouched = false;
+let jobId = null;
+let seen = 0;
+
+function lines(value) {
+  return value.split("\n").map((line) => line.trim()).filter(Boolean);
+}
+function pipeline() {
+  return "gptclean";
+}
+function applyMode() {
+  const mode = pipeline() === "anomalygen" ? "anomalygen" : "sunburst";
+  document.querySelectorAll("[data-sunburst]").forEach((node) => {
+    node.textContent = node.dataset[mode];
+    if (node.classList.contains("pill")) {
+      node.classList.toggle("ready", mode === "sunburst");
+      node.classList.toggle("wait", mode !== "sunburst");
+    }
+  });
+}
+function settings() {
+  return {
+    pipeline: pipeline(),
+    total: Number(totalInput.value || 0),
+    varieties: Number(varietiesInput.value || 1),
+    machines: [...document.querySelectorAll("input[name=machine]:checked")].map((node) => node.value),
+    damages: [...document.querySelectorAll("input[name=damage]:checked")].map((node) => node.value),
+    positions: lines(positionBox.value),
+    backgrounds: lines(backgroundBox.value),
+  };
+}
+function fitLines(box, count, stem) {
+  const current = lines(box.value);
+  const next = current.slice(0, count);
+  while (next.length < count) next.push(`${stem} ${next.length + 1}`);
+  box.value = next.join("\n");
+}
+async function preview() {
+  const response = await fetch("/api/preview", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({settings: settings()}),
+  });
+  const plan = await response.json();
+  if (!totalTouched) {
+    totalInput.value = plan.total || "";
+    totalNumber.textContent = String(plan.total);
+  } else {
+    totalNumber.textContent = String(Math.min(Number(totalInput.value || 0), plan.full_total));
+  }
+  const maskPipeline = plan.pipeline === "sunburst" || plan.pipeline === "gptclean";
+  const bits = maskPipeline
+    ? [`${plan.scene_total} clean ${plan.scene_total === 1 ? "scene" : "scenes"}`, `${plan.total} labeled ${plan.total === 1 ? "photo" : "photos"}`, plan.total ? `about ${plan.minutes} minutes` : "no generation"]
+    : [`${plan.scene_total} clean ${plan.scene_total === 1 ? "scene" : "scenes"}`, `${plan.held_total} held for a later fine-tune`, plan.total ? `about ${plan.minutes} minutes on the GPU` : "no generation"];
+  summary.innerHTML = plan.summary.map((line) => `<li>${line}</li>`).join("")
+    + `<li>${bits.join(" · ")}</li>`;
+  statusLine.textContent = !plan.total
+    ? (maskPipeline
+      ? "None of the checked damages apply to the checked machines."
+      : "This grid has no trained adapter to generate. Start will still record the request.")
+    : (plan.pipeline === "gptclean"
+      ? "Start makes each clean photo with GPT, draws the mask, paints the damage, and lists the photo with its label. Qwen stays off."
+      : (plan.pipeline === "sunburst"
+        ? "Start makes the clean photos with Qwen, draws each mask, paints the damage, and lists the photo with its label."
+        : "Start sends this grid to the GPU server and waits for the job to report each stage."));
+}
+let previewTimer = 0;
+function schedulePreview() {
+  clearTimeout(previewTimer);
+  previewTimer = setTimeout(preview, 120);
+}
+function onSettings(event) {
+  if (event.target === totalInput) totalTouched = true;
+  if (event.target === positionCount) fitLines(positionBox, Number(positionCount.value), "position");
+  if (event.target === backgroundCount) fitLines(backgroundBox, Number(backgroundCount.value), "background");
+  if (event.target === positionBox) positionCount.value = lines(positionBox.value).length;
+  if (event.target === backgroundBox) backgroundCount.value = lines(backgroundBox.value).length;
+  if (event.target.name === "pipeline") applyMode();
+  schedulePreview();
+}
+document.querySelector("#settings").addEventListener("input", onSettings);
+document.querySelector("#settings").addEventListener("change", onSettings);
+document.querySelector("#smoke").addEventListener("click", () => {
+  totalTouched = false;
+  positionCount.value = 1;
+  backgroundCount.value = 1;
+  fitLines(positionBox, 1, "position");
+  fitLines(backgroundBox, 1, "background");
+  positionBox.value = "side view";
+  backgroundBox.value = "gravel rental yard";
+  preview();
+});
+document.querySelector("#full").addEventListener("click", () => {
+  totalTouched = false;
+  positionCount.value = 3;
+  backgroundCount.value = 3;
+  positionBox.value = "side view\nthree-quarter view\nfront view";
+  backgroundBox.value = "gravel rental yard\nearthmoving construction site\nquarry parking area";
+  preview();
+});
+document.querySelector("#composer").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const text = promptBox.value.trim();
+  if (!text && !photoData) return;
+  liveKicker.hidden = false;
+  const article = document.createElement("article");
+  article.className = "bubble user";
+  article.innerHTML = `<span class="who">You</span>${text || "Reference photo"}`;
+  if (photoData) {
+    const image = document.createElement("img");
+    image.src = photoData;
+    image.alt = "Attached reference photo";
+    article.appendChild(image);
+  }
+  live.appendChild(article);
+  live.parentElement.scrollTop = live.parentElement.scrollHeight;
+});
+const referenceThumb = document.querySelector("#reference-thumb");
+const referenceName = document.querySelector("#reference-name");
+const referenceNote = document.querySelector("#reference-note");
+const referenceCard = document.querySelector("#reference-card");
+const referenceChip = document.querySelector("#reference-chip");
+function showReference(src, name, note) {
+  referenceThumb.src = src;
+  referenceName.textContent = name;
+  referenceNote.textContent = note;
+  referenceChip.src = src;
+  referenceCard.scrollIntoView({block: "nearest"});
+}
+referenceThumb.addEventListener("click", () => referenceCard.classList.toggle("open"));
+document.querySelector("#photo").addEventListener("change", () => {
+  const file = document.querySelector("#photo").files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    photoData = reader.result;
+    showReference(photoData, file.name, "Attached. Start pipeline sends this photo with the message in the box.");
+  };
+  reader.readAsDataURL(file);
+});
+function addBubble(event) {
+  const article = document.createElement("article");
+  article.className = "bubble pipeline";
+  if (event.kind === "message") {
+    article.innerHTML = `<span class="who">Pipeline</span>${event.text}`;
+  } else if (event.kind === "image") {
+    article.innerHTML = `<span class="who">${event.role === "damaged" ? "Generated" : event.role === "clean" ? "Clean scene" : "Reference"}</span>${event.caption || ""}`;
+    const image = document.createElement("img");
+    image.src = "/media/" + event.path;
+    image.alt = event.caption || "Pipeline image";
+    article.appendChild(image);
+  } else if (event.kind === "result") {
+    article.innerHTML = `<span class="who">Result</span>${event.caption || ""}<div class="result"></div>`;
+    const row = article.querySelector(".result");
+    [["clean", "Clean"], ["mask", "Mask label"], ["damaged", "Damage"]].forEach(([key, title]) => {
+      const figure = document.createElement("figure");
+      figure.innerHTML = `<img alt="${title}"><figcaption>${title}</figcaption>`;
+      figure.querySelector("img").src = "/media/" + event[key];
+      row.append(figure);
+    });
+  } else if (event.kind === "error") {
+    article.innerHTML = `<span class="who">Pipeline</span>${event.text}`;
+  } else if (event.kind === "done") {
+    const labels = event.labels ? ` Labels: ${event.labels}.` : "";
+    article.innerHTML = `<span class="who">Pipeline</span>Finished. ${event.generated} labeled photo${event.generated === 1 ? "" : "s"}.${labels} ${event.held || 0} held.`;
+  }
+  live.appendChild(article);
+}
+async function poll() {
+  if (!jobId) return;
+  const response = await fetch(jobsBase + "/api/jobs/" + jobId);
+  const job = await response.json();
+  liveKicker.hidden = false;
+  (job.events || []).slice(seen).forEach(addBubble);
+  seen = (job.events || []).length;
+  live.parentElement.scrollTop = live.parentElement.scrollHeight;
+  const running = job.status === "running";
+  startButton.disabled = running;
+  continueButton.disabled = running;
+  if (running) {
+    startButton.textContent = "Pipeline running";
+    statusLine.textContent = "The GPU job is running. Both buttons stay off until it finishes or stops.";
+    setTimeout(poll, 2000);
+  } else {
+    startButton.textContent = "Start pipeline";
+    statusLine.textContent = job.status === "done"
+      ? "The job finished. The images above are what the server wrote. Open Saved runs to compare it with an earlier pipeline."
+      : "The job stopped. Continue resumes from the scenes already saved.";
+    if (job.status === "done") loadRuns();
+  }
+}
+function runName(pipelineName) {
+  if (pipelineName === "gptclean") return "GPT clean";
+  if (pipelineName === "sunburst") return "Sunburst";
+  return "Checkpoint";
+}
+async function loadRuns() {
+  const box = document.querySelector("#runs");
+  const response = await fetch("/api/runs");
+  if (!response.ok) return;
+  const payload = await response.json();
+  box.replaceChildren();
+  (payload.runs || []).forEach((run) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "run";
+    button.textContent = `${runName(run.pipeline)} · ${run.id} · ${run.count} photos`;
+    button.addEventListener("click", () => showRun(run.id));
+    box.appendChild(button);
+  });
+}
+async function showRun(id) {
+  if (startButton.textContent === "Pipeline running") return;
+  const response = await fetch("/api/runs/" + id);
+  const run = await response.json();
+  if (!response.ok) {
+    statusLine.textContent = run.error || "That saved run could not be opened.";
+    return;
+  }
+  live.replaceChildren();
+  liveKicker.hidden = false;
+  liveKicker.textContent = runName(run.pipeline);
+  const intro = document.createElement("article");
+  intro.className = "bubble pipeline";
+  intro.innerHTML = `<span class="who">${runName(run.pipeline)}</span>${run.id}. ${run.images.length} labeled photos. Each card is the clean photo, the mask, and the damage, with the damage name in the title.`;
+  live.appendChild(intro);
+  run.images.forEach((image) => addBubble({
+    kind: "result",
+    caption: `${image.machine} · ${image.damage} · ${image.position} · ${image.background}`,
+    clean: image.clean,
+    mask: image.mask,
+    damaged: image.image,
+  }));
+  live.parentElement.scrollTop = 0;
+}
+startButton.addEventListener("click", async () => {
+  startButton.disabled = true;
+  continueButton.disabled = true;
+  statusLine.textContent = "Sending the grid to the GPU server.";
+  try {
+    const response = await fetch(jobsBase + "/api/jobs", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({prompt: promptBox.value, settings: settings(), photo: photoData}),
+    });
+    const payload = await response.json();
+    if (!response.ok) {
+      startButton.disabled = false;
+      continueButton.disabled = false;
+      statusLine.textContent = payload.error || "Could not start.";
+      return;
+    }
+    jobId = payload.id;
+    seen = 0;
+    live.replaceChildren();
+    liveKicker.hidden = false;
+    poll();
+  } catch (error) {
+    startButton.disabled = false;
+    continueButton.disabled = false;
+    statusLine.textContent = "The studio job server did not answer. Reload this page.";
+  }
+});
+async function attachRunning() {
+  const response = await fetch(jobsBase + "/api/jobs");
+  if (!response.ok) return;
+  const payload = await response.json();
+  const job = (payload.jobs || []).find((item) => item.status === "running");
+  if (!job) return;
+  jobId = job.id;
+  seen = 0;
+  live.replaceChildren();
+  liveKicker.hidden = false;
+  poll();
+}
+continueButton.addEventListener("click", async () => {
+  continueButton.disabled = true;
+  startButton.disabled = true;
+  statusLine.textContent = "Continuing the saved job.";
+  try {
+    const response = await fetch(jobsBase + "/api/jobs/continue", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: "{}",
+    });
+    const payload = await response.json();
+    if (!response.ok) {
+      continueButton.disabled = false;
+      startButton.disabled = false;
+      statusLine.textContent = payload.error || "Could not continue.";
+      return;
+    }
+    jobId = payload.id;
+    seen = 0;
+    live.replaceChildren();
+    liveKicker.hidden = false;
+    poll();
+  } catch (error) {
+    continueButton.disabled = false;
+    startButton.disabled = false;
+    statusLine.textContent = "The studio job server did not answer. Reload this page.";
+  }
+});
+applyMode();
+preview();
+loadRuns();
+attachRunning();
+</script>
+</body>
+</html>

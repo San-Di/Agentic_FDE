@@ -1,0 +1,44 @@
+{
+  "prompt": "Edit this photograph of ONE excavator. Replace its four rubber wheels and wheeled chassis with a conventional tracked excavator undercarriage with TWO continuous steel crawler tracks. Keep ONE cab, ONE engine housing, ONE articulated hydraulic boom, and ONE digging bucket connected as a single physically coherent excavator. Repaint its orange panels yellow. Replace the roadside background with an earthmoving construction site. Keep the same three-quarter camera viewpoint and natural photographic lighting. The single excavator is parked and undamaged: clear intact glass, smooth metal panels, intact steel tracks. No wheels, no duplicate cab, no second machine overlapping it. Realistic rental inspection photo.",
+  "selections": {},
+  "caption_path": "/home/ubuntu/cdf-excavator-route1/results/clean/glass_site.txt",
+  "output_media_path": "/home/ubuntu/cdf-excavator-route1/results/clean/glass_site.png",
+  "input_media_path": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_road.png",
+  "control_media": {},
+  "captioning": {
+    "strategy": "text",
+    "template": "Edit this photograph of ONE excavator. Replace its four rubber wheels and wheeled chassis with a conventional tracked excavator undercarriage with TWO continuous steel crawler tracks. Keep ONE cab, ONE engine housing, ONE articulated hydraulic boom, and ONE digging bucket connected as a single physically coherent excavator. Repaint its orange panels yellow. Replace the roadside background with an earthmoving construction site. Keep the same three-quarter camera viewpoint and natural photographic lighting. The single excavator is parked and undamaged: clear intact glass, smooth metal panels, intact steel tracks. No wheels, no duplicate cab, no second machine overlapping it. Realistic rental inspection photo."
+  },
+  "endpoints": [
+    {
+      "stage": "generation",
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1/images/edits",
+      "adapter": "openai.images.edits",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "timeout": 1200.0,
+      "requests": [
+        {
+          "image": [
+            "image.png",
+            {
+              "__elided__": "bytes",
+              "bytes": 1035893,
+              "sha256": "1dc7ff8c4c71ac89aa260db88781a66771a28690a53636231f1b3ff4c6470f5a"
+            },
+            "image/png"
+          ],
+          "prompt": "Edit this photograph of ONE excavator. Replace its four rubber wheels and wheeled chassis with a conventional tracked excavator undercarriage with TWO continuous steel crawler tracks. Keep ONE cab, ONE engine housing, ONE articulated hydraulic boom, and ONE digging bucket connected as a single physically coherent excavator. Repaint its orange panels yellow. Replace the roadside background with an earthmoving construction site. Keep the same three-quarter camera viewpoint and natural photographic lighting. The single excavator is parked and undamaged: clear intact glass, smooth metal panels, intact steel tracks. No wheels, no duplicate cab, no second machine overlapping it. Realistic rental inspection photo.",
+          "response_format": "b64_json",
+          "extra_body": {
+            "seed": 240,
+            "num_inference_steps": 40
+          }
+        }
+      ],
+      "calls": 1,
+      "duration_seconds": 478.05391693115234
+    }
+  ]
+}

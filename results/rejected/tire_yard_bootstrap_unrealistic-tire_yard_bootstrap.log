@@ -1,0 +1,33 @@
+
+2026-10-28 09:06:39,516 - __main__ - INFO - ================================================================================
+2026-10-28 09:06:39,516 - __main__ - INFO - Cosmos Data Factory (CDF) Augmentation
+2026-10-28 09:06:39,516 - __main__ - INFO - Start Time: 2026-10-28 09:06:39
+2026-10-28 09:06:39,516 - __main__ - INFO - ================================================================================
+2026-10-28 09:06:39,520 - __main__ - INFO - Environment: keys from terminal, endpoint/model from config when unset.
+2026-10-28 09:06:39,520 - __main__ - INFO - Configuration structure validation passed
+2026-10-28 09:06:39,520 - __main__ - INFO - Configuration validation passed; no endpoint calls were made
+
+2026-10-28 09:06:41,626 - __main__ - INFO - ================================================================================
+2026-10-28 09:06:41,626 - __main__ - INFO - Cosmos Data Factory (CDF) Augmentation
+2026-10-28 09:06:41,626 - __main__ - INFO - Start Time: 2026-10-28 09:06:41
+2026-10-28 09:06:41,626 - __main__ - INFO - ================================================================================
+2026-10-28 09:06:41,630 - __main__ - INFO - Environment: keys from terminal, endpoint/model from config when unset.
+2026-10-28 09:06:41,631 - __main__ - INFO - Configuration structure validation passed
+2026-10-28 09:06:41,631 - __main__ - INFO - Initializing captioner...
+2026-10-28 09:06:41,631 - __main__ - INFO - Text captioner initialized: The large nearest foreground tire directly beneath the cab has been punctured and has NO AIR. Make t...
+2026-10-28 09:06:41,631 - __main__ - INFO - Captioner initialized successfully
+2026-10-28 09:06:41,631 - __main__ - WARNING - No API key resolved for endpoint 'image-edit' (role='image_edit'): env var(s) BUILD_NVIDIA_API_KEY are all unset. Remote endpoint — the request will send no key and almost certainly 401. Set one of those vars (e.g. --env-file examples/.env).
+2026-10-28 09:06:41,688 - __main__ - INFO - OpenAIImageEditAdapter ready: url=http://172.18.0.1:8011/v1 model=Qwen/Qwen-Image-Edit-2511 (timeout 1200s, no SDK retries)
+2026-10-28 09:06:41,688 - __main__ - INFO - Generator initialized successfully
+2026-10-28 09:06:41,688 - __main__ - INFO - ================================================================================
+2026-10-28 09:06:41,688 - __main__ - INFO - Processing sample: /home/ubuntu/cdf-excavator-route1/results/clean/tire_yard.png
+2026-10-28 09:06:41,688 - __main__ - INFO - Running captioning...
+2026-10-28 09:06:41,688 - __main__ - INFO - Captioning completed successfully
+2026-10-28 09:06:41,688 - __main__ - INFO - Prompt written to /home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.txt
+
+2026-10-28 09:06:41,688 - __main__ - INFO - Running generation (seed: 330)...
+2026-10-28 09:11:27,093 - __main__ - INFO - Generation request complete request_id=None -> output_path=/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.png
+2026-10-28 09:11:27,093 - __main__ - INFO - Generation done in 4.76 min, saved to: /home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.png
+2026-10-28 09:11:27,094 - __main__ - INFO - Metadata written to /home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.json
+2026-10-28 09:11:27,094 - __main__ - INFO - ================================================================================
+2026-10-28 09:11:27,094 - __main__ - INFO - Task complete

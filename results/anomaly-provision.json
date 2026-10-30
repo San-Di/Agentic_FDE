@@ -1,0 +1,28 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--name",
+    "cdf-route1-provision",
+    "--gpus",
+    "all",
+    "--user",
+    "1000:1000",
+    "-e",
+    "HF_TOKEN",
+    "-e",
+    "UV_CACHE_DIR=/tmp/uv-cache",
+    "-v",
+    "/home/ubuntu/cdf-excavator-route1/checkpoints:/workspace/cdf-anomalygen/checkpoints",
+    "-v",
+    "/home/ubuntu/.cache/huggingface/hub:/workspace/cdf-anomalygen/checkpoints/hf",
+    "--entrypoint",
+    "/bin/bash",
+    "sha256:21adca477ff1926eccafe61c602a4dcf1188cbaf62fb70fa6bb1cd4273833e31",
+    "-c",
+    "bash scripts/download_checkpoints.sh base-nano dinov2 cradio wan-vae sam2 guardrail qwen-tokenizer"
+  ],
+  "exit_code": 0,
+  "runtime_id": "sha256:21adca477ff1926eccafe61c602a4dcf1188cbaf62fb70fa6bb1cd4273833e31"
+}

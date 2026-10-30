@@ -1,0 +1,29 @@
+{
+  "job": {
+    "id": "clean_repaired_hq",
+    "stage": "clean",
+    "source": "/home/ubuntu/cdf-excavator-route1/inputs/reference.jpg",
+    "output": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired_hq.png",
+    "prompt": "Edit this real machinery photograph. Restore the excavator to undamaged rental condition: clear intact cab glass, smooth intact yellow steel body panels, radiator enclosed by its normal metal cover. Remove the worker and top-right logo. Preserve the camera angle and lighting. Crisp realistic photography, natural metal paint and glass reflections.",
+    "seed": 101,
+    "config": "/home/ubuntu/cdf-excavator-route1/configs/clean_repaired_hq.yaml"
+  },
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "cdf-route1",
+    "--user",
+    "1000:1000",
+    "-v",
+    "/home/ubuntu/cdf-excavator-route1:/home/ubuntu/cdf-excavator-route1",
+    "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+    "--config",
+    "/home/ubuntu/cdf-excavator-route1/configs/clean_repaired_hq.yaml"
+  ],
+  "image_id": "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+  "exit_code": 0,
+  "elapsed_seconds": 195.595388174057,
+  "output_exists": true
+}

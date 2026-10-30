@@ -1,0 +1,99 @@
+{
+  "name": "rental_equipment_damage",
+  "business": "Rental excavators and trucks. From one sample photo, build a labeled set for return inspection: some machines with a flat tire and the rest intact, some with shattered cab glass, some with a body dent, in different scenes, plus undamaged views.",
+  "reference_photo": "inputs/reference.jpg",
+  "requested_equipment": ["WheeledExcavator", "TrackedExcavator", "Truck"],
+  "iterations": 4000,
+  "annotations": "results/bootstrap-annotations.json",
+  "classes": [
+    {
+      "texture": "WheeledExcavator",
+      "defect": "flat_tire",
+      "spatial_dependency": "text",
+      "roi_prompt": "the rubber tire, excluding the wheel hub, the machine body, and the ground"
+    },
+    {
+      "texture": "TrackedExcavator",
+      "defect": "shattered_glass",
+      "spatial_dependency": "text",
+      "roi_prompt": "the cab window glass, excluding the metal frame and the rest of the machine"
+    },
+    {
+      "texture": "TrackedExcavator",
+      "defect": "dent",
+      "spatial_dependency": "text",
+      "roi_prompt": "the metal body panel, excluding the glass, tracks, and background"
+    }
+  ],
+  "scenes": [
+    {"id": "tire_yard", "texture": "WheeledExcavator", "defect": "flat_tire", "clean": "results/clean/tire_yard.png"},
+    {"id": "tire_road", "texture": "WheeledExcavator", "defect": "flat_tire", "clean": "results/clean/tire_road.png"},
+    {"id": "glass_site", "texture": "TrackedExcavator", "defect": "shattered_glass", "clean": "results/clean/glass_site.png"},
+    {"id": "glass_farm", "texture": "TrackedExcavator", "defect": "shattered_glass", "clean": "results/clean/glass_farm.png"},
+    {"id": "dent_depot", "texture": "TrackedExcavator", "defect": "dent", "clean": "results/clean/dent_depot.png"},
+    {"id": "dent_quarry", "texture": "TrackedExcavator", "defect": "dent", "clean": "results/clean/dent_quarry.png"}
+  ],
+  "examples": [
+    {
+      "id": "deflated_van_tire",
+      "texture": "WheeledExcavator",
+      "defect": "flat_tire",
+      "file": "references/candidates/Deflated_car_tire.jpg",
+      "polygons": [[0.46, 0.58], [0.64, 0.56], [0.76, 0.66], [0.70, 0.76], [0.52, 0.78], [0.42, 0.68]],
+      "source": "https://commons.wikimedia.org/wiki/File:Deflated_car_tire.jpg",
+      "note": "Van tire collapsed at the contact patch. The mask covers the deformed rubber, not the hub."
+    },
+    {
+      "id": "flat_bus_tire",
+      "texture": "WheeledExcavator",
+      "defect": "flat_tire",
+      "file": "references/candidates/KSRTC_Flat_tire.jpg",
+      "polygons": [[0.30, 0.64], [0.55, 0.66], [0.76, 0.72], [0.72, 0.80], [0.45, 0.82], [0.28, 0.74]],
+      "source": "https://commons.wikimedia.org/wiki/File:KSRTC_Flat_tire.jpg",
+      "note": "Bus tire deflated along the ground contact. Used as a truck-class exemplar because the supplied excavator has tracks."
+    },
+    {
+      "id": "customer_glass",
+      "texture": "TrackedExcavator",
+      "defect": "shattered_glass",
+      "file": "dataset/TrackedExcavator/anomaly_image/shattered_glass/real_reference_crop.png",
+      "mask": "dataset/TrackedExcavator/mask/shattered_glass/real_reference_crop_mask.png",
+      "source": "inputs/reference.jpg",
+      "note": "Shattered cab glass cropped from the supplied excavator photo."
+    },
+    {
+      "id": "shattered_windshield",
+      "texture": "TrackedExcavator",
+      "defect": "shattered_glass",
+      "file": "references/candidates/thumb_Windschutzscheibe__gesplittert__1_.jpg",
+      "polygons": [[0.22, 0.12], [0.96, 0.10], [0.98, 0.84], [0.16, 0.82], [0.20, 0.40]],
+      "source": "https://commons.wikimedia.org/wiki/File:Windschutzscheibe,_gesplittert_(1).jpg",
+      "note": "Spiderweb fracture across a laminated windshield. Mask stays on the glass and off the mirror and dashboard."
+    },
+    {
+      "id": "tempered_glass_cracks",
+      "texture": "TrackedExcavator",
+      "defect": "shattered_glass",
+      "file": "references/candidates/thumb_Vidrio_roto.jpg",
+      "polygons": [[0.03, 0.03], [0.97, 0.03], [0.97, 0.97], [0.03, 0.97]],
+      "source": "https://commons.wikimedia.org/wiki/File:Vidrio_roto.jpg",
+      "note": "Close-up of tempered-glass fracture. A thin border stays unmasked so the mask is not solid white."
+    },
+    {
+      "id": "customer_dent",
+      "texture": "TrackedExcavator",
+      "defect": "dent",
+      "file": "dataset/TrackedExcavator/anomaly_image/dent/real_reference_crop.png",
+      "mask": "dataset/TrackedExcavator/mask/dent/real_reference_crop_mask.png",
+      "source": "inputs/reference.jpg",
+      "note": "Crushed body panel cropped from the supplied excavator photo."
+    }
+  ],
+  "held_out_references": [
+    {"file": "references/candidates/Flat_tire_on_a_Fiat_Panda.jpg", "reason": "The deflated contact patch is only a few pixels tall, so a mask either covers the wheel or the gravel."},
+    {"file": "references/candidates/Tire_hernia.jpg", "reason": "Excavator sidewall bubble, which is a different tire failure from a deflated tire."},
+    {"file": "references/candidates/thumb_Grad_wybita_tylna_szyba_samochodu.jpg", "reason": "Shows loose glass on a parcel shelf rather than a fractured pane."},
+    {"file": "references/candidates/thumb_Damaged_car_from_hail_in_Missouri__April_2001.jpg", "reason": "News still of a missing rear window, too coarse to teach a dent or a crack."},
+    {"file": "references/candidates/thumb_Perth_hailstorm_2010_damaged_car.jpg", "reason": "Leaves and a collapsed rear window, not a readable dent or crack region."}
+  ]
+}

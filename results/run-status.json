@@ -1,0 +1,35 @@
+{
+  "updated_at_utc": "2026-10-28T09:28:17.726681+00:00",
+  "stage": "generating reviewed damage training examples",
+  "summary": "AWS access restored. Six clean scene variants reviewed; two tire bootstrap examples reviewed. Four glass/dent bootstrap edits are running. AnomalyGen training and generation have not started.",
+  "reasoner_service": "Paused for GPU image editing; restoration is pending AWS access.",
+  "git_push": false,
+  "remote_root": "/home/ubuntu/cdf-excavator-route1",
+  "last_observed_editor": {
+    "pid": 255235,
+    "argv": "/home/ubuntu/cosmos-excavator-test/.venv/bin/python edit_server.py",
+    "endpoint": "http://172.18.0.1:8011",
+    "gpu_memory_gib_approx": 36
+  },
+  "last_observed_containers": {
+    "cdf-route1-augmentation": "running CPU client",
+    "cdf-route1-anomaly": "sleeping, smoke test passed"
+  },
+  "remote_jobs_to_check": [
+    "glass_site corrected clean retry",
+    "glass_farm clean",
+    "dent_depot clean with revised source/config",
+    "dent_quarry clean with revised source/config",
+    "tire_road_bootstrap focused crop"
+  ],
+  "remote_configs_are_authoritative": true,
+  "training_budget_iterations": 600,
+  "next_required_stage": "Retrieve and visually inspect completed remote scene/defect images, then finish bootstrap annotations before training.",
+  "restore_command": "cd /home/ubuntu/cdf-excavator-route1 && python3 manage_reasoner.py resume --state results/reasoner-edit-receipt.json",
+  "restore_precondition": "Finish queued edits and stop test GPU processes; verify process identity before terminating anything.",
+  "latest_remote_completions_observed": [
+    "glass_site corrected retry",
+    "glass_farm clean",
+    "tire_road_bootstrap focused crop"
+  ]
+}

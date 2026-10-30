@@ -1,0 +1,10 @@
+{
+  "reason": "repaired close-up led to hybrid machine with duplicate cab",
+  "changes": [
+    "glass_site",
+    "dent_depot",
+    "dent_quarry"
+  ],
+  "source": "reviewed tire_road clean photo",
+  "receipt_note": "Existing clean batch loaded its planned job fields at launch; actual image requests use the updated config files. Saved config and edit request log record effective inputs/prompts."
+}

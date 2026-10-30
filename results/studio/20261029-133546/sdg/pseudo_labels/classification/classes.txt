@@ -1,0 +1,4 @@
+original
+TrackedExcavator+dent
+TrackedExcavator+shattered_glass
+WheeledExcavator+flat_tire

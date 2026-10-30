@@ -1,0 +1,11 @@
+{
+  "image": "results/clean/repaired_int8.png",
+  "accepted_for_pilot": true,
+  "findings": [
+    "Clear intact glass",
+    "Smooth uncrushed body panels",
+    "No worker or logo",
+    "Photographic texture substantially improved"
+  ],
+  "limitation": "Generated details are invented; this is not a verified reconstruction of the original excavator"
+}

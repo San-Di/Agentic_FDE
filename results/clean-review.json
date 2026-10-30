@@ -1,0 +1,13 @@
+{
+  "tire_yard": {
+    "accepted_for_pilot": true,
+    "checks": {
+      "wheeled_excavator": true,
+      "boom_and_bucket_visible": true,
+      "tires_inflated": true,
+      "glass_intact": true,
+      "body_without_visible_impact_damage": true
+    },
+    "note": "Synthetic machine geometry is plausible in this view; not a manufacturer-specific reconstruction."
+  }
+}

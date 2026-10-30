@@ -1,0 +1,12 @@
+{
+  "repositories": {
+    "cdf-anomalygen": "63c888cb479e22f6abe343421eaba2ae1847b8f5",
+    "cdf-orchestration": "6e04f191cd90a6042791085f8d5df2fbf02d5ad0",
+    "cdf-augmentation": "73c861c43a4952b6060c87265bf39f4abc48199a",
+    "cdf-auto-labeling": "6c75c76c52a6c76c3866a38d30885e11123b0981"
+  },
+  "input_sha256": "f2a74d3ae32672b2710756bfe12bc93051f4ad833d0d404a3bdcd97da92b5b54",
+  "orchestrator": "Custom sequential driver with official CDF component containers; stock PCB Airflow DAG not deployed",
+  "route": "photo, image edit, AnomalyGen; no Omniverse",
+  "gpu": "single NVIDIA L40S 48 GB"
+}

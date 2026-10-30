@@ -1,0 +1,44 @@
+{
+  "prompt": "Keep this exact photograph, viewpoint, equipment and background. Shatter ONLY the large nearest cab window: dense realistic spiderweb cracks with a small missing-glass opening and jagged glass edges still held by the black window frame. Other windows remain clear and intact; the metal body and running gear remain undamaged. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+  "selections": {},
+  "caption_path": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/glass_farm.txt",
+  "output_media_path": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/glass_farm.png",
+  "input_media_path": "/home/ubuntu/cdf-excavator-route1/results/clean/glass_farm.png",
+  "control_media": {},
+  "captioning": {
+    "strategy": "text",
+    "template": "Keep this exact photograph, viewpoint, equipment and background. Shatter ONLY the large nearest cab window: dense realistic spiderweb cracks with a small missing-glass opening and jagged glass edges still held by the black window frame. Other windows remain clear and intact; the metal body and running gear remain undamaged. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels."
+  },
+  "endpoints": [
+    {
+      "stage": "generation",
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1/images/edits",
+      "adapter": "openai.images.edits",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "timeout": 1200.0,
+      "requests": [
+        {
+          "image": [
+            "image.png",
+            {
+              "__elided__": "bytes",
+              "bytes": 1089352,
+              "sha256": "88e65ab9c4a143caa0063d68c6a493d93ffcee46578f5e3ec359eccd6ba35886"
+            },
+            "image/png"
+          ],
+          "prompt": "Keep this exact photograph, viewpoint, equipment and background. Shatter ONLY the large nearest cab window: dense realistic spiderweb cracks with a small missing-glass opening and jagged glass edges still held by the black window frame. Other windows remain clear and intact; the metal body and running gear remain undamaged. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+          "response_format": "b64_json",
+          "extra_body": {
+            "seed": 303,
+            "num_inference_steps": 40
+          }
+        }
+      ],
+      "calls": 1,
+      "duration_seconds": 200.69432830810547
+    }
+  ]
+}

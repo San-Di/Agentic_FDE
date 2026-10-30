@@ -1,0 +1,74 @@
+[
+  {
+    "id": "reference-dent",
+    "kind": "dent",
+    "box": [
+      55,
+      244,
+      165,
+      317
+    ],
+    "painted": "results/sunburst-compare/painted/reference-dent.png",
+    "mask": "results/sunburst-compare/masks/reference-dent.png"
+  },
+  {
+    "id": "reference-glass",
+    "kind": "shattered_glass",
+    "box": [
+      210,
+      212,
+      309,
+      289
+    ],
+    "painted": "results/sunburst-compare/painted/reference-glass.png",
+    "mask": "results/sunburst-compare/masks/reference-glass.png"
+  },
+  {
+    "id": "reference-tire",
+    "kind": "flat_tire",
+    "box": [
+      104,
+      350,
+      218,
+      452
+    ],
+    "painted": "results/sunburst-compare/painted/reference-tire.png",
+    "mask": "results/sunburst-compare/masks/reference-tire.png"
+  },
+  {
+    "id": "tracked-side-dent",
+    "kind": "dent",
+    "box": [
+      929,
+      228,
+      1126,
+      381
+    ],
+    "painted": "results/sunburst-compare/painted/tracked-side-dent.png",
+    "mask": "results/sunburst-compare/masks/tracked-side-dent.png"
+  },
+  {
+    "id": "tracked-site-glass",
+    "kind": "shattered_glass",
+    "box": [
+      339,
+      57,
+      600,
+      310
+    ],
+    "painted": "results/sunburst-compare/painted/tracked-site-glass.png",
+    "mask": "results/sunburst-compare/masks/tracked-site-glass.png"
+  },
+  {
+    "id": "wheeled-tire",
+    "kind": "flat_tire",
+    "box": [
+      769,
+      413,
+      975,
+      633
+    ],
+    "painted": "results/sunburst-compare/painted/wheeled-tire.png",
+    "mask": "results/sunburst-compare/masks/wheeled-tire.png"
+  }
+]

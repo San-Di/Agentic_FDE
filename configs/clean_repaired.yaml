@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "inputs": {
+        "rgb": "/home/ubuntu/cdf-excavator-route1/inputs/reference.jpg"
+      },
+      "output": {
+        "video": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired.png",
+        "caption": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired.txt",
+        "metadata": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired.json"
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "adapter": "openai.images.edits",
+      "timeout": 1200
+    }
+  ],
+  "captioning": {
+    "llm": {
+      "text": "Repair the excavator in this photograph completely. Replace every shattered cab window with intact clear glass. Rebuild the crushed yellow engine housing and rear panels as smooth intact painted metal enclosing the radiator. Remove the worker, clipboard and top-right logo. Preserve the tracked excavator and camera view. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels."
+    }
+  },
+  "augmentation": {
+    "model": {
+      "name": "image-edit"
+    },
+    "parameters": {
+      "seed": 100,
+      "num_inference_steps": 30
+    }
+  },
+  "pipeline": {
+    "retry": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "fine_tune": false,
+  "checkpoint": "iter_000002000.pt",
+  "anomaly_type": "TrackedExcavator+dent",
+  "sampler": "UniPC",
+  "num_steps": 35,
+  "guidance": 3.0,
+  "generated": 2,
+  "generation_wall_seconds": 38.5,
+  "labels": "results/inference-cat312c/sdg/pseudo_labels/coco_annotations.json",
+  "images": [
+    "results/inference-cat312c/sdg/reconstructed_image/TrackedExcavator+dent_00000.png",
+    "results/inference-cat312c/sdg/reconstructed_image/TrackedExcavator+dent_00001.png"
+  ],
+  "clean": "results/inference-cat312c/clean.png",
+  "reference": "inputs/cat312c_reference.png",
+  "planner": "Cosmos Reason2 8B was paused and was not called",
+  "mask_source": "hand polygon on the restored CAT 312C side panel"
+}

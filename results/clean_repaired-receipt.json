@@ -1,0 +1,29 @@
+{
+  "job": {
+    "id": "clean_repaired",
+    "stage": "clean",
+    "source": "/home/ubuntu/cdf-excavator-route1/inputs/reference.jpg",
+    "output": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired.png",
+    "prompt": "Repair the excavator in this photograph completely. Replace every shattered cab window with intact clear glass. Rebuild the crushed yellow engine housing and rear panels as smooth intact painted metal enclosing the radiator. Remove the worker, clipboard and top-right logo. Preserve the tracked excavator and camera view. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+    "seed": 100,
+    "config": "/home/ubuntu/cdf-excavator-route1/configs/clean_repaired.yaml"
+  },
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "cdf-route1",
+    "--user",
+    "1000:1000",
+    "-v",
+    "/home/ubuntu/cdf-excavator-route1:/home/ubuntu/cdf-excavator-route1",
+    "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+    "--config",
+    "/home/ubuntu/cdf-excavator-route1/configs/clean_repaired.yaml"
+  ],
+  "image_id": "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+  "exit_code": 0,
+  "elapsed_seconds": 154.1802098751068,
+  "output_exists": true
+}

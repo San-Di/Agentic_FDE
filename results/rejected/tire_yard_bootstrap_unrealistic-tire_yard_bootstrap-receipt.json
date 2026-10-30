@@ -1,0 +1,26 @@
+{
+  "job": {
+    "id": "tire_yard_bootstrap",
+    "stage": "bootstrap",
+    "source": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_yard.png",
+    "output": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/tire_yard.png",
+    "prompt": "The large nearest foreground tire directly beneath the cab has been punctured and has NO AIR. Make this ONE tire completely flat under the excavator weight: its lower sidewall collapses into crumpled folded rubber that bulges widely along the ground. The metal rim drops very close to the ground, visibly much lower than on the other tires. Show an obvious wide flattened contact patch. Allow slight natural settling at this wheel. Preserve the same excavator, camera and background. All other tires stay fully inflated. All glass, metal panels, boom and bucket remain intact and undamaged. Realistic inspection photograph.",
+    "seed": 330,
+    "config": "/home/ubuntu/cdf-excavator-route1/configs/tire_yard_bootstrap.yaml"
+  },
+  "command": [
+    "docker",
+    "exec",
+    "cdf-route1-augmentation",
+    "uv",
+    "run",
+    "--no-sync",
+    "/workspace/modules/cli.py",
+    "--config",
+    "/home/ubuntu/cdf-excavator-route1/configs/tire_yard_bootstrap.yaml"
+  ],
+  "image_id": "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+  "exit_code": 0,
+  "elapsed_seconds": 289.73037028312683,
+  "output_exists": true
+}

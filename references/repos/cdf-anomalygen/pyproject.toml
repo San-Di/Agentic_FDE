@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+[project]
+name = "cdf-anomalygen"
+version = "1.2.0"
+description = "Cosmos Data Factory (CDF) AnomalyGen: a pipeline for generating synthetic defect data by fine-tuning Cosmos3 into anomaly-inpainting models (mask placement, fine-tuning, SDG, evaluation, quality refinement, pseudo-labeling)"
+requires-python = ">=3.13"
+license = { text = "Apache-2.0" }
+authors = [{ name = "NVIDIA Corporation" }]
+
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# -v: per-test result lines; -ra: summary with skip/xfail reasons; --durations: slowest tests.
+addopts = "-v -ra --durations=20"
+
+[tool.coverage.run]
+source = ["anomalygen"]
+# scripts/ are thin CLI entrypoints (argparse + orchestration), exercised via their imported
+# library functions rather than unit-tested directly.
+omit = ["*/tests/*", "*/scripts/*"]
+
+[tool.coverage.report]
+skip_covered = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+# ag_config holds the experiment recipes (repo-root, editable sample files).
+include = ["anomalygen*", "ag_config*"]

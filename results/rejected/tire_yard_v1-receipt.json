@@ -1,0 +1,31 @@
+{
+  "job": {
+    "id": "tire_yard",
+    "stage": "clean",
+    "source": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired_int8.png",
+    "output": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_yard.png",
+    "prompt": "Use the reference as a machinery photography guide. Create a new photograph of a compact yellow wheeled excavator with four rubber tires and no tracks, parked in a gravel rental yard, seen from a front left three-quarter view at wheel height. Show the entire machine's cab, chassis and running gear. All glass must be clear and unbroken, all panels undented and closed, all tires fully inflated. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+    "seed": 200,
+    "config": "/home/ubuntu/cdf-excavator-route1/configs/tire_yard.yaml"
+  },
+  "command": [
+    "docker",
+    "exec",
+    "cdf-route1-augmentation",
+    "uv",
+    "run",
+    "--no-sync",
+    "/workspace/modules/cli.py",
+    "--config",
+    "/home/ubuntu/cdf-excavator-route1/configs/tire_yard.yaml"
+  ],
+  "image_id": "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+  "exit_code": 0,
+  "elapsed_seconds": 205.2131016254425,
+  "output_exists": true,
+  "visual_review": {
+    "accepted": false,
+    "reason": "Missing excavator boom and bucket; looks like a cab on wheels",
+    "archived_output": "/home/ubuntu/cdf-excavator-route1/results/rejected/tire_yard_v1.png"
+  }
+}

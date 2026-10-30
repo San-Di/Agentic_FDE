@@ -1,0 +1,25 @@
+{
+  "augmentation": {
+    "id": "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+    "repo_digests": [
+      "nvcr.io/nvidia/cdf-augmentation@sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a"
+    ],
+    "size": 15125675727,
+    "labels": {
+      "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
+      "org.opencontainers.image.ref.name": "ubuntu",
+      "org.opencontainers.image.version": "24.04"
+    }
+  },
+  "anomalygen": {
+    "id": "sha256:21adca477ff1926eccafe61c602a4dcf1188cbaf62fb70fa6bb1cd4273833e31",
+    "repo_digests": [
+      "nvcr.io/nvidia/cdf-anomalygen@sha256:21adca477ff1926eccafe61c602a4dcf1188cbaf62fb70fa6bb1cd4273833e31"
+    ],
+    "size": 24708071123,
+    "labels": {
+      "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
+      "org.opencontainers.image.version": "24.04"
+    }
+  }
+}

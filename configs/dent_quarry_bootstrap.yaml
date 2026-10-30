@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "inputs": {
+        "rgb": "/home/ubuntu/cdf-excavator-route1/results/clean/dent_quarry.png"
+      },
+      "output": {
+        "video": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/dent_quarry.png",
+        "caption": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/dent_quarry.txt",
+        "metadata": "/home/ubuntu/cdf-excavator-route1/results/bootstrap/dent_quarry.json"
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "adapter": "openai.images.edits",
+      "timeout": 1200
+    }
+  ],
+  "captioning": {
+    "llm": {
+      "text": "Keep this exact photograph, viewpoint, equipment and background. Add ONLY one deep concave impact dent with sharp creases in the large painted metal side engine cover behind the cab. The panel remains attached. Use physically shaded folded metal, not painted markings. All glass and running gear remain intact. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels."
+    }
+  },
+  "augmentation": {
+    "model": {
+      "name": "image-edit"
+    },
+    "parameters": {
+      "seed": 305,
+      "num_inference_steps": 40
+    }
+  },
+  "pipeline": {
+    "retry": 0
+  }
+}

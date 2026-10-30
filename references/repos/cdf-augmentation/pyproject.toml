@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=80", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+managed = true
+# CVE-2026-63374 / CVE-2026-64847: anyio (via httpx, openai) must be >= 4.14.2.
+# GHSA-vxq7-64xx-v4gw / GHSA-8988-9cw3-xx77: urllib3 (via requests, botocore) must be >= 2.8.0.
+constraint-dependencies = ["anyio>=4.14.2", "urllib3>=2.8.0"]
+
+[project]
+name = "cdf-augmentation"
+version = "1.2.0"
+description = "Cosmos Data Factory (CDF) Augmentation: a pipeline for processing camera data through generative AI models (Cosmos Transfer, Cosmos Predict, image-edit, and more)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6.0",
+    "openai>=1.0.0",
+    "requests>=2.31.0",
+    "multi-storage-client[boto3]==0.36.0",
+    "omegaconf>=2.3.0",
+    "pydantic>=2.12.0",
+    "opencv-python-headless==4.12.0.88",
+    "av==18.1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["modules*"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.13.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+    ".",
+    "modules",
+]
+
+[tool.coverage.run]
+source = [
+    ".",
+    "modules",
+]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+]
+
+[tool.coverage.report]
+show_missing = true
+precision = 2

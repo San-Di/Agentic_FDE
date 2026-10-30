@@ -1,0 +1,44 @@
+{
+  "prompt": "Use the reference as a machinery photography guide. Create a new photograph of a compact yellow wheeled excavator with four rubber tires and no tracks, parked in a gravel rental yard, seen from a front left three-quarter view at wheel height. Show the entire machine's cab, chassis and running gear. All glass must be clear and unbroken, all panels undented and closed, all tires fully inflated. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+  "selections": {},
+  "caption_path": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_yard.txt",
+  "output_media_path": "/home/ubuntu/cdf-excavator-route1/results/clean/tire_yard.png",
+  "input_media_path": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired_int8.png",
+  "control_media": {},
+  "captioning": {
+    "strategy": "text",
+    "template": "Use the reference as a machinery photography guide. Create a new photograph of a compact yellow wheeled excavator with four rubber tires and no tracks, parked in a gravel rental yard, seen from a front left three-quarter view at wheel height. Show the entire machine's cab, chassis and running gear. All glass must be clear and unbroken, all panels undented and closed, all tires fully inflated. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels."
+  },
+  "endpoints": [
+    {
+      "stage": "generation",
+      "id": "image-edit",
+      "role": "image_edit",
+      "url": "http://172.18.0.1:8011/v1/images/edits",
+      "adapter": "openai.images.edits",
+      "model": "Qwen/Qwen-Image-Edit-2511",
+      "timeout": 1200.0,
+      "requests": [
+        {
+          "image": [
+            "image.png",
+            {
+              "__elided__": "bytes",
+              "bytes": 1046782,
+              "sha256": "38f07e73793d4df640835fb940b5849560004346a9fb3714f369e2b97b6dd3d6"
+            },
+            "image/png"
+          ],
+          "prompt": "Use the reference as a machinery photography guide. Create a new photograph of a compact yellow wheeled excavator with four rubber tires and no tracks, parked in a gravel rental yard, seen from a front left three-quarter view at wheel height. Show the entire machine's cab, chassis and running gear. All glass must be clear and unbroken, all panels undented and closed, all tires fully inflated. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels.",
+          "response_format": "b64_json",
+          "extra_body": {
+            "seed": 200,
+            "num_inference_steps": 40
+          }
+        }
+      ],
+      "calls": 1,
+      "duration_seconds": 200.9393277168274
+    }
+  ]
+}

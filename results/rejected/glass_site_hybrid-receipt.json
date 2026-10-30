@@ -1,0 +1,26 @@
+{
+  "job": {
+    "id": "glass_site",
+    "stage": "clean",
+    "source": "/home/ubuntu/cdf-excavator-route1/results/clean/repaired_int8.png",
+    "output": "/home/ubuntu/cdf-excavator-route1/results/clean/glass_site.png",
+    "prompt": "Use the reference as a machinery photography guide. Create a new photograph of a medium yellow tracked excavator, parked in an earthmoving construction site, seen from a front left three-quarter view close enough to inspect the cab glass. Show the entire machine's cab, chassis and running gear. All glass must be clear and unbroken, all panels undented and closed, all tires fully inflated. Natural rental inspection photograph, realistic machinery construction and photographic lighting. No people, logos, writing, arrows or labels. Clearly show its articulated hydraulic digging boom, dipper arm and steel digging bucket attached to the rotating upper structure, plus the cab and rear engine counterweight. The boom and bucket must be visible in the photograph.",
+    "seed": 202,
+    "config": "/home/ubuntu/cdf-excavator-route1/configs/glass_site.yaml"
+  },
+  "command": [
+    "docker",
+    "exec",
+    "cdf-route1-augmentation",
+    "uv",
+    "run",
+    "--no-sync",
+    "/workspace/modules/cli.py",
+    "--config",
+    "/home/ubuntu/cdf-excavator-route1/configs/glass_site.yaml"
+  ],
+  "image_id": "sha256:96d3d1ab45f04d3163bb31a36e3e5d406d0623d03a5d165590c3751943fc085a",
+  "exit_code": 0,
+  "elapsed_seconds": 401.3152139186859,
+  "output_exists": true
+}

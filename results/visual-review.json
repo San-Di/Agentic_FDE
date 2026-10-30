@@ -1,0 +1,32 @@
+{
+  "tire_yard": {
+    "clean": "accepted for pilot",
+    "bootstrap": "accepted close-up; exaggerated sidewall creases",
+    "anomalygen": "not run"
+  },
+  "tire_road": {
+    "clean": "accepted for pilot",
+    "bootstrap": "accepted close-up; compressed lower sidewall; altered tread details",
+    "anomalygen": "not run"
+  },
+  "glass_site": {
+    "clean": "accepted corrected tracked-machine scene",
+    "bootstrap": "rejected for training: altered window structure and stylized cracks; original real glass crop will be used",
+    "anomalygen": "not run"
+  },
+  "glass_farm": {
+    "clean": "accepted for pilot; extra rear blade is a machinery-detail concern",
+    "bootstrap": "rejected for training: merged panes, altered frame, stylized cracks; using original real glass crop",
+    "anomalygen": "not run"
+  },
+  "dent_depot": {
+    "clean": "accepted for pilot",
+    "bootstrap": "rejected for training: replaced body panel and obstructed cab; using original real dent crop",
+    "anomalygen": "not run"
+  },
+  "dent_quarry": {
+    "clean": "accepted for pilot",
+    "bootstrap": "rejected for training: stylized circular impact and radial splits; using original real dent crop",
+    "anomalygen": "not run"
+  }
+}
